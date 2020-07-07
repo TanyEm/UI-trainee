@@ -24,7 +24,7 @@
 		7397ACC524ADFD8C007AE5E7 /* SF-Compact-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7397ACBC24ADFD8C007AE5E7 /* SF-Compact-Rounded-Black.otf */; };
 		7397ACC624ADFD8C007AE5E7 /* SF-Compact-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7397ACBD24ADFD8C007AE5E7 /* SF-Compact-Rounded-Light.otf */; };
 		7397ACC724ADFD8C007AE5E7 /* SF-Compact-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7397ACBE24ADFD8C007AE5E7 /* SF-Compact-Rounded-Thin.otf */; };
-		7397ACCB24AE2ACE007AE5E7 /* Screenshot 2020-07-02 at 5.40.06 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 7397ACCA24AE2ACE007AE5E7 /* Screenshot 2020-07-02 at 5.40.06 PM.png */; };
+		7397ACCD24B32DBF007AE5E7 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,7 @@
 		7397ACBC24ADFD8C007AE5E7 /* SF-Compact-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Black.otf"; sourceTree = "<group>"; };
 		7397ACBD24ADFD8C007AE5E7 /* SF-Compact-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Light.otf"; sourceTree = "<group>"; };
 		7397ACBE24ADFD8C007AE5E7 /* SF-Compact-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Thin.otf"; sourceTree = "<group>"; };
-		7397ACCA24AE2ACE007AE5E7 /* Screenshot 2020-07-02 at 5.40.06 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2020-07-02 at 5.40.06 PM.png"; sourceTree = "<group>"; };
+		7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,9 +123,9 @@
 				7397AC8524AC93B8007AE5E7 /* AppDelegate.swift */,
 				7397AC8724AC93B8007AE5E7 /* SceneDelegate.swift */,
 				7397AC8924AC93B8007AE5E7 /* WelcomeViewController.swift */,
+				7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */,
 				7397AC8B24AC93B8007AE5E7 /* Main.storyboard */,
 				7397AC8E24AC93BF007AE5E7 /* Assets.xcassets */,
-				7397ACCA24AE2ACE007AE5E7 /* Screenshot 2020-07-02 at 5.40.06 PM.png */,
 				7397AC9024AC93BF007AE5E7 /* LaunchScreen.storyboard */,
 				7397AC9324AC93BF007AE5E7 /* Info.plist */,
 			);
@@ -278,7 +278,6 @@
 				7397AC8F24AC93BF007AE5E7 /* Assets.xcassets in Resources */,
 				7397ACC624ADFD8C007AE5E7 /* SF-Compact-Rounded-Light.otf in Resources */,
 				7397ACC124ADFD8C007AE5E7 /* SF-Compact-Rounded-Medium.otf in Resources */,
-				7397ACCB24AE2ACE007AE5E7 /* Screenshot 2020-07-02 at 5.40.06 PM.png in Resources */,
 				7397ACC424ADFD8C007AE5E7 /* SF-Compact-Rounded-Heavy.otf in Resources */,
 				7397AC8D24AC93B8007AE5E7 /* Main.storyboard in Resources */,
 				7397ACC524ADFD8C007AE5E7 /* SF-Compact-Rounded-Black.otf in Resources */,
@@ -307,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7397ACCD24B32DBF007AE5E7 /* PhoneNumberViewController.swift in Sources */,
 				7397AC8A24AC93B8007AE5E7 /* WelcomeViewController.swift in Sources */,
 				7397AC8624AC93B8007AE5E7 /* AppDelegate.swift in Sources */,
 				7397AC8824AC93B8007AE5E7 /* SceneDelegate.swift in Sources */,

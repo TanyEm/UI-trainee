@@ -23,6 +23,22 @@ class WelcomeViewController: UIViewController {
         goButton.layer.cornerRadius = 25
         
     }
+    
+        
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Change navigation bar items
+        // Back button
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+                
+//        let backImage = UIImage(named: "close")
+//        self.navigationController?.navigationBar.backIndicatorImage = backImage
+//        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+
+    }
 
 }
 

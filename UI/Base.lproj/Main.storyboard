@@ -18,7 +18,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="UI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="UI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,6 +135,7 @@
                         <outlet property="moveNext" destination="zf3-TE-MmE" id="k1c-Ko-G5V"/>
                         <outlet property="phoneNumber" destination="ezh-Mk-aPu" id="7Ae-2K-bir"/>
                         <outlet property="regionNumber" destination="K4Y-zX-g8x" id="RDR-0i-TLv"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="Cancel" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="dEx-F3-UnI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIU-cW-U6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

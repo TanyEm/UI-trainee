@@ -32,7 +32,7 @@ class PhoneNumberViewController: UIViewController {
         let rightBorder = CALayer()
         let width = CGFloat(1.0)
         rightBorder.frame = CGRect(x: 0.0, y: 0.0, width: width, height: phoneNumber.frame.size.height - width)
-        rightBorder.backgroundColor = UIColor.gray.cgColor
+        rightBorder.backgroundColor = UIColor.lightGray.cgColor
         phoneNumber.layer.addSublayer(rightBorder)
         
         
@@ -46,8 +46,46 @@ class PhoneNumberViewController: UIViewController {
     }
     
     @IBAction func moveToWelcome(_ sender: Any) {
+        performSegue(withIdentifier: "Cancel", sender: self)
     }
     
+    @IBAction func moveToNextScreen(_ sender: Any) {
+        regionNumber.text = "+358"
+        phoneNumber.text = "123456789"
+        guard let regionCode = regionNumber.text else { return }
+        guard let phoneNumber = phoneNumber.text else { return }
+        
+        let isValid = isPhoneNumerIsValid(code: regionCode, number: phoneNumber)
+        if isValid == true {
+            //move to next screen
+        } else {
+            displayMessage(userMessage: "Your phone number is empty. Try to fill it again")
+        }
+    }
+    
+    func isPhoneNumerIsValid(code: String, number: String) -> Bool {
+        let phoneValidation: Bool
+        if code.isEmpty && number.isEmpty {
+            phoneValidation = false
+        } else {
+            phoneValidation = true
+        }
+        return phoneValidation
+    }
+    
+    func displayMessage(userMessage:String) -> Void {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "Error", message: userMessage, preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+                //Will working when OK tapped
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            })
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
     
 
     /*

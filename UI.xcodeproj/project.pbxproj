@@ -25,6 +25,7 @@
 		7397ACC624ADFD8C007AE5E7 /* SF-Compact-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7397ACBD24ADFD8C007AE5E7 /* SF-Compact-Rounded-Light.otf */; };
 		7397ACC724ADFD8C007AE5E7 /* SF-Compact-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7397ACBE24ADFD8C007AE5E7 /* SF-Compact-Rounded-Thin.otf */; };
 		7397ACCD24B32DBF007AE5E7 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */; };
+		7397ACCF24B8AD25007AE5E7 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397ACCE24B8AD25007AE5E7 /* PinCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		7397ACBD24ADFD8C007AE5E7 /* SF-Compact-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Light.otf"; sourceTree = "<group>"; };
 		7397ACBE24ADFD8C007AE5E7 /* SF-Compact-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
+		7397ACCE24B8AD25007AE5E7 /* PinCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				7397AC8724AC93B8007AE5E7 /* SceneDelegate.swift */,
 				7397AC8924AC93B8007AE5E7 /* WelcomeViewController.swift */,
 				7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */,
+				7397ACCE24B8AD25007AE5E7 /* PinCodeViewController.swift */,
 				7397AC8B24AC93B8007AE5E7 /* Main.storyboard */,
 				7397AC8E24AC93BF007AE5E7 /* Assets.xcassets */,
 				7397AC9024AC93BF007AE5E7 /* LaunchScreen.storyboard */,
@@ -309,6 +312,7 @@
 				7397ACCD24B32DBF007AE5E7 /* PhoneNumberViewController.swift in Sources */,
 				7397AC8A24AC93B8007AE5E7 /* WelcomeViewController.swift in Sources */,
 				7397AC8624AC93B8007AE5E7 /* AppDelegate.swift in Sources */,
+				7397ACCF24B8AD25007AE5E7 /* PinCodeViewController.swift in Sources */,
 				7397AC8824AC93B8007AE5E7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

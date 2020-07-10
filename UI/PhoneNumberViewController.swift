@@ -57,7 +57,7 @@ class PhoneNumberViewController: UIViewController {
         
         let isValid = isPhoneNumerIsValid(code: regionCode, number: phoneNumber)
         if isValid == true {
-            //move to next screen
+            performSegue(withIdentifier: "GoNext", sender: self)
         } else {
             displayMessage(userMessage: "Your phone number is empty. Try to fill it again")
         }

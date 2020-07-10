@@ -46,7 +46,7 @@ class PhoneNumberViewController: UIViewController {
     }
     
     @IBAction func moveToWelcome(_ sender: Any) {
-        performSegue(withIdentifier: "Cancel", sender: self)
+        performSegue(withIdentifier: "MoveToWelcome", sender: self)
     }
     
     @IBAction func moveToNextScreen(_ sender: Any) {

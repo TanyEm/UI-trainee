@@ -22,7 +22,20 @@ class PinCodeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        firstCell.layer.cornerRadius = 20
+        secondCell.layer.cornerRadius = 20
+        thirdCell.layer.cornerRadius = 20
+        fourthCell.layer.cornerRadius = 20
+        fifthCell.layer.cornerRadius = 20
+        sixthCell.layer.cornerRadius = 20
+    }
     
+    @IBAction func moveToPhoneNumber(_ sender: Any) {
+        performSegue(withIdentifier: "MoveToChangePhoneNumber", sender: self)
+    }
 
     /*
     // MARK: - Navigation

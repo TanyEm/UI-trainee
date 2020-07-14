@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PinCodeViewController: UIViewController {
+class PinCodeViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var firstCell: UITextField!
     @IBOutlet weak var secondCell: UITextField!
@@ -19,8 +19,13 @@ class PinCodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        firstCell.delegate = self
+        secondCell.delegate = self
+        thirdCell.delegate = self
+        fourthCell.delegate = self
+        fifthCell.delegate = self
+        sixthCell.delegate = self
     }
         
     override func viewWillAppear(_ animated: Bool) {
@@ -33,8 +38,56 @@ class PinCodeViewController: UIViewController {
         sixthCell.layer.cornerRadius = 20
     }
     
+    
     @IBAction func moveToPhoneNumber(_ sender: Any) {
         performSegue(withIdentifier: "MoveToChangePhoneNumber", sender: self)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if (textField.text?.count)! < 1 && string.count > 0 {
+            switch textField {
+            case firstCell:
+                secondCell.becomeFirstResponder()
+            case secondCell:
+                thirdCell.becomeFirstResponder()
+            case thirdCell:
+                fourthCell.becomeFirstResponder()
+            case fourthCell:
+                fifthCell.becomeFirstResponder()
+            case fifthCell:
+                sixthCell.becomeFirstResponder()
+            case sixthCell:
+                sixthCell.resignFirstResponder()
+                print("OTP - \(firstCell.text!)\(secondCell.text!)\(thirdCell.text!)\(fourthCell.text!)\(fifthCell.text!)\(sixthCell.text!)")
+            default:
+                break
+            }
+            textField.text = string
+            return false
+
+        } else if (textField.text?.count)! >= 1 && string.isEmpty {
+            switch textField {
+            case sixthCell:
+                fifthCell.becomeFirstResponder()
+            case fifthCell:
+                fourthCell.becomeFirstResponder()
+            case fourthCell:
+                thirdCell.becomeFirstResponder()
+            case thirdCell:
+                secondCell.becomeFirstResponder()
+            case secondCell:
+                firstCell.becomeFirstResponder()
+            default:
+                break
+            }
+            textField.text = ""
+            return false
+        } else if (textField.text?.count)! >= 1 {
+            textField.text = string
+            return false
+        }
+        return true
     }
 
     /*

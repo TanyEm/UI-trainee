@@ -10,12 +10,16 @@ import UIKit
 
 class PinCodeViewController: UIViewController, UITextFieldDelegate{
     
+    var countTimer:Timer!
+    var counter = 5
+    
     @IBOutlet weak var firstCell: UITextField!
     @IBOutlet weak var secondCell: UITextField!
     @IBOutlet weak var thirdCell: UITextField!
     @IBOutlet weak var fourthCell: UITextField!
     @IBOutlet weak var fifthCell: UITextField!
     @IBOutlet weak var sixthCell: UITextField!
+    @IBOutlet weak var sentPin: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,8 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
         fourthCell.delegate = self
         fifthCell.delegate = self
         sixthCell.delegate = self
+        
+        
     }
         
     override func viewWillAppear(_ animated: Bool) {
@@ -36,11 +42,43 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
         fourthCell.layer.cornerRadius = 20
         fifthCell.layer.cornerRadius = 20
         sixthCell.layer.cornerRadius = 20
+        sentPin.layer.cornerRadius = 20
+        
+        
+        
+        self.countTimer = Timer.scheduledTimer(timeInterval: 1 ,
+        target: self,
+        selector: #selector(self.changeTitle),
+        userInfo: nil,
+        repeats: true)
     }
     
     
     @IBAction func moveToPhoneNumber(_ sender: Any) {
         performSegue(withIdentifier: "MoveToChangePhoneNumber", sender: self)
+    }
+    @IBAction func pinCdeTimer(_ sender: Any) {
+        
+    }
+    
+    @objc func changeTitle()
+    {
+         if counter != 0
+         {
+            sentPin.isEnabled = false
+             sentPin.setTitle("Resend Code in \(counter)", for: .normal)
+             counter -= 1
+            sentPin.backgroundColor = UIColor.white
+            sentPin.setTitleColor(UIColor.lightGray, for: .normal)
+         }
+         else {
+            countTimer.invalidate()
+            sentPin.isEnabled = true
+            sentPin.setTitle("Send Code again", for: .normal)
+            sentPin.setTitleColor(UIColor.white, for: .normal)
+            sentPin.backgroundColor = UIColor.init(red: (90/255.0), green: (190/255.0), blue: (250/255.0), alpha: 1)
+         }
+
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -48,7 +48,7 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
         
         self.countTimer = Timer.scheduledTimer(timeInterval: 1 ,
         target: self,
-        selector: #selector(self.changeTitle),
+        selector: #selector(self.changeButtonTitle),
         userInfo: nil,
         repeats: true)
     }
@@ -58,27 +58,27 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
         performSegue(withIdentifier: "MoveToChangePhoneNumber", sender: self)
     }
     @IBAction func pinCdeTimer(_ sender: Any) {
-        
+       //send code again
     }
     
-    @objc func changeTitle()
+    @objc func changeButtonTitle()
     {
-         if counter != 0
-         {
+        // stop blinking
+        UIView.setAnimationsEnabled(true)
+        if counter != 0 {
             sentPin.isEnabled = false
-             sentPin.setTitle("Resend Code in \(counter)", for: .normal)
-             counter -= 1
+            sentPin.setTitle("Resend Code in \(counter)", for: .normal)
+            counter -= 1
             sentPin.backgroundColor = UIColor.white
             sentPin.setTitleColor(UIColor.lightGray, for: .normal)
-         }
-         else {
+         } else {
             countTimer.invalidate()
             sentPin.isEnabled = true
             sentPin.setTitle("Send Code again", for: .normal)
             sentPin.setTitleColor(UIColor.white, for: .normal)
             sentPin.backgroundColor = UIColor.init(red: (90/255.0), green: (190/255.0), blue: (250/255.0), alpha: 1)
          }
-
+        UIView.setAnimationsEnabled(false)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

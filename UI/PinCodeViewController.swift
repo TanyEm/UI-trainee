@@ -11,7 +11,7 @@ import UIKit
 class PinCodeViewController: UIViewController, UITextFieldDelegate{
     
     var countTimer:Timer!
-    var counter = 5
+    var counter = 300
     
     @IBOutlet weak var firstCell: UITextField!
     @IBOutlet weak var secondCell: UITextField!
@@ -44,8 +44,6 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
         sixthCell.layer.cornerRadius = 20
         sentPin.layer.cornerRadius = 20
         
-        
-        
         self.countTimer = Timer.scheduledTimer(timeInterval: 1 ,
         target: self,
         selector: #selector(self.changeButtonTitle),
@@ -67,7 +65,7 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
         UIView.setAnimationsEnabled(true)
         if counter != 0 {
             sentPin.isEnabled = false
-            sentPin.setTitle("Resend Code in \(counter)", for: .normal)
+            sentPin.setTitle("Resend Code in \(timeCounter(time: counter))", for: .normal)
             counter -= 1
             sentPin.backgroundColor = UIColor.white
             sentPin.setTitleColor(UIColor.lightGray, for: .normal)
@@ -79,6 +77,15 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
             sentPin.backgroundColor = UIColor.init(red: (90/255.0), green: (190/255.0), blue: (250/255.0), alpha: 1)
          }
         UIView.setAnimationsEnabled(false)
+    }
+    
+    func timeCounter(time: Int) -> String {
+        var count = time
+        let minutes = String(count / 60)
+        let seconds = String(count % 60)
+        let timeLeft : String = minutes + ":" + seconds
+        count -= 1
+        return timeLeft
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -80,11 +80,16 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
     }
     
     func timeCounter(time: Int) -> String {
-        var count = time
-        let minutes = String(count / 60)
-        let seconds = String(count % 60)
-        let timeLeft : String = minutes + ":" + seconds
-        count -= 1
+        var timeLeft: String
+        let minutes = String(time / 60)
+        let seconds = time % 60
+        //guard let sec = Int(seconds) else { return ""}
+        if seconds >= 9 {
+            print(seconds)
+           timeLeft = minutes + ":" + String(seconds)
+        } else {
+            timeLeft = minutes + ":" + "0\(seconds)"
+        }
         return timeLeft
     }
     

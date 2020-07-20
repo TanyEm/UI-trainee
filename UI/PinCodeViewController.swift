@@ -11,7 +11,7 @@ import UIKit
 class PinCodeViewController: UIViewController, UITextFieldDelegate{
     
     var countTimer:Timer!
-    var counter = 300
+    var counter = 63
     
     @IBOutlet weak var firstCell: UITextField!
     @IBOutlet weak var secondCell: UITextField!
@@ -62,13 +62,14 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
     @objc func changeButtonTitle()
     {
         // stop blinking
-        UIView.setAnimationsEnabled(true)
+        UIView.setAnimationsEnabled(false)
         if counter != 0 {
             sentPin.isEnabled = false
             sentPin.setTitle("Resend Code in \(timeCounter(time: counter))", for: .normal)
             counter -= 1
             sentPin.backgroundColor = UIColor.white
-            sentPin.setTitleColor(UIColor.lightGray, for: .normal)
+            sentPin.setTitleColor(UIColor.gray, for: .normal)
+            sentPin.titleLabel?.font = sentPin.titleLabel?.font.withSize(17)
          } else {
             countTimer.invalidate()
             sentPin.isEnabled = true
@@ -76,7 +77,7 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
             sentPin.setTitleColor(UIColor.white, for: .normal)
             sentPin.backgroundColor = UIColor.init(red: (90/255.0), green: (190/255.0), blue: (250/255.0), alpha: 1)
          }
-        UIView.setAnimationsEnabled(false)
+        UIView.setAnimationsEnabled(true)
     }
     
     func timeCounter(time: Int) -> String {

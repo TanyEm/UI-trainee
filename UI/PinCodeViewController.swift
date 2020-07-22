@@ -30,8 +30,6 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
         fourthCell.delegate = self
         fifthCell.delegate = self
         sixthCell.delegate = self
-        
-        
     }
         
     override func viewWillAppear(_ animated: Bool) {
@@ -96,7 +94,7 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if (textField.text?.count)! < 1 && string.count > 0 {
+        if (textField.text?.count)! == 1 && string.count > 0 {
             switch textField {
             case firstCell:
                 secondCell.becomeFirstResponder()
@@ -111,6 +109,10 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
             case sixthCell:
                 sixthCell.resignFirstResponder()
                 print("OTP - \(firstCell.text!)\(secondCell.text!)\(thirdCell.text!)\(fourthCell.text!)\(fifthCell.text!)\(sixthCell.text!)")
+                let otp = "\(firstCell.text!)\(secondCell.text!)\(thirdCell.text!)\(fourthCell.text!)\(fifthCell.text!)\(sixthCell.text!)"
+                if otp.count == 6 {
+                    performSegue(withIdentifier: "moveToUserInfo", sender: self)
+                }
             default:
                 break
             }

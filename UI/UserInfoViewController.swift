@@ -22,7 +22,21 @@ class UserInfoViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         nameField.layer.cornerRadius = 20
+        let paddingName = UIView(frame: CGRect(x: 0,
+                                               y: 0,
+                                               width: 20,
+                                               height: self.nameField.frame.height))
+        nameField.leftView = paddingName
+        nameField.leftViewMode = UITextField.ViewMode.always
+        
         birthdayField.layer.cornerRadius = 20
+        let paddingBirthday = UIView(frame: CGRect(x: 0,
+                                               y: 0,
+                                               width: 20,
+                                               height: self.birthdayField.frame.height))
+        birthdayField.leftView = paddingBirthday
+        birthdayField.leftViewMode = UITextField.ViewMode.always
+        
         goNext.layer.cornerRadius = 20
     }
     

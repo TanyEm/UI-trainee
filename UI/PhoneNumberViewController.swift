@@ -24,23 +24,45 @@ class PhoneNumberViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // the regionNumber layer
         regionNumber.layer.cornerRadius = 20
         regionNumber.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
         regionNumber.layer.borderWidth = 0
         regionNumber.clipsToBounds = true
-                
-        let rightBorder = CALayer()
+        
+        // padding region code text field
+        let paddingCode = UIView(frame: CGRect(x: 0,
+                                               y: 0,
+                                               width: 20,
+                                               height: self.regionNumber.frame.height))
+        regionNumber.leftView = paddingCode
+        regionNumber.leftViewMode = UITextField.ViewMode.always
+
+        // the phoneNumber layer
+        // make a border on the left side phoneNumber text field
+        let leftBorder = CALayer()
         let width = CGFloat(1.0)
-        rightBorder.frame = CGRect(x: 0.0, y: 0.0, width: width, height: phoneNumber.frame.size.height - width)
-        rightBorder.backgroundColor = UIColor.lightGray.cgColor
-        phoneNumber.layer.addSublayer(rightBorder)
-        
-        
+        leftBorder.frame = CGRect(x: 0.0,
+                                   y: 0.0,
+                                   width: width,
+                                   height: phoneNumber.frame.size.height - width)
+        leftBorder.backgroundColor = UIColor.lightGray.cgColor
+        phoneNumber.layer.addSublayer(leftBorder)
+            
         phoneNumber.layer.cornerRadius = 20
         phoneNumber.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         phoneNumber.layer.borderWidth = 0
         phoneNumber.clipsToBounds = true
         
+        // padding number text field
+        let paddingNumber = UIView(frame: CGRect(x: 0,
+                                                 y: 0,
+                                                 width: 20,
+                                                 height: self.phoneNumber.frame.height))
+        phoneNumber.leftView = paddingNumber
+        phoneNumber.leftViewMode = UITextField.ViewMode.always
+        
+        // the moveNext layer
         moveNext.layer.cornerRadius = 20
                 
     }
@@ -75,8 +97,12 @@ class PhoneNumberViewController: UIViewController {
     
     func displayMessage(userMessage:String) -> Void {
         DispatchQueue.main.async {
-            let alertController = UIAlertController(title: "Error", message: userMessage, preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+            let alertController = UIAlertController(title: "Error",
+                                                    message: userMessage,
+                                                    preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK",
+                                            style: .default,
+                                            handler: { (action: UIAlertAction) in
                 //Will working when OK tapped
                 DispatchQueue.main.async {
                     self.dismiss(animated: true, completion: nil)

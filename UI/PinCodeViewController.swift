@@ -11,7 +11,7 @@ import UIKit
 class PinCodeViewController: UIViewController, UITextFieldDelegate{
     
     var countTimer:Timer!
-    var counter = 63
+    var counter = 300
     
     @IBOutlet weak var firstCell: UITextField!
     @IBOutlet weak var secondCell: UITextField!
@@ -52,6 +52,7 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func moveToPhoneNumber(_ sender: Any) {
         performSegue(withIdentifier: "MoveToChangePhoneNumber", sender: self)
+        countTimer?.invalidate()
     }
     @IBAction func pinCdeTimer(_ sender: Any) {
        //send code again
@@ -112,6 +113,7 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
                 let otp = "\(firstCell.text!)\(secondCell.text!)\(thirdCell.text!)\(fourthCell.text!)\(fifthCell.text!)\(sixthCell.text!)"
                 if otp.count == 6 {
                     performSegue(withIdentifier: "moveToUserInfo", sender: self)
+                    countTimer?.invalidate()
                 }
             default:
                 break

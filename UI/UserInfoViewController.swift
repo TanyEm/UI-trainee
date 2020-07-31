@@ -13,11 +13,15 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var birthdayField: UITextField!
     @IBOutlet weak var goNext: UIButton!
+    @IBOutlet weak var datePicker: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func moveToPhoneNumberToStartAgain(_ sender: Any) {
+        performSegue(withIdentifier: "RegisterAgain", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

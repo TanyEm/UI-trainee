@@ -26,6 +26,13 @@ class Emitter {
         cell.lifetime = 50
         cell.velocity = CGFloat(25)
         
+        // make it flying with range
+        cell.emissionRange = (60*(.pi/180))
+                
+        // make different size of emoji
+        cell.scale = 0.4
+        cell.scaleRange = 0.3
+        
         cells.append(cell)
         
         return cells

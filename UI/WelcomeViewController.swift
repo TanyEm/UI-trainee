@@ -11,6 +11,7 @@ import UIKit
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var goButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,8 +23,17 @@ class WelcomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         goButton.layer.cornerRadius = 25
         
+        makeFlyingEmoji()
+        
     }
     
+    func makeFlyingEmoji() {
+        let emitter = Emitter.get(with: #imageLiteral(resourceName: "in-love"))
+        emitter.emitterPosition = CGPoint(x: view.frame.width/2,
+                                          y: 50)
+        emitter.emitterSize = CGSize(width: view.frame.width, height: 100)
+        view.layer.addSublayer(emitter)
+    }
         
     // MARK: - Navigation
 
@@ -33,10 +43,6 @@ class WelcomeViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
-                
-//        let backImage = UIImage(named: "close")
-//        self.navigationController?.navigationBar.backIndicatorImage = backImage
-//        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
 
     }
 

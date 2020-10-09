@@ -26,6 +26,7 @@
 		7397ACC724ADFD8C007AE5E7 /* SF-Compact-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7397ACBE24ADFD8C007AE5E7 /* SF-Compact-Rounded-Thin.otf */; };
 		7397ACCD24B32DBF007AE5E7 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */; };
 		7397ACCF24B8AD25007AE5E7 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397ACCE24B8AD25007AE5E7 /* PinCodeViewController.swift */; };
+		739B3ED02530F66100723529 /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739B3ECF2530F66100723529 /* Emitter.swift */; };
 		73D5727424C858CA0056BA76 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D5727324C858CA0056BA76 /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		7397ACBE24ADFD8C007AE5E7 /* SF-Compact-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
 		7397ACCE24B8AD25007AE5E7 /* PinCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
+		739B3ECF2530F66100723529 /* Emitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
 		73D5727324C858CA0056BA76 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				7397AC8E24AC93BF007AE5E7 /* Assets.xcassets */,
 				7397AC9024AC93BF007AE5E7 /* LaunchScreen.storyboard */,
 				7397AC9324AC93BF007AE5E7 /* Info.plist */,
+				739B3ECF2530F66100723529 /* Emitter.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7397ACCD24B32DBF007AE5E7 /* PhoneNumberViewController.swift in Sources */,
+				739B3ED02530F66100723529 /* Emitter.swift in Sources */,
 				73D5727424C858CA0056BA76 /* UserInfoViewController.swift in Sources */,
 				7397AC8A24AC93B8007AE5E7 /* WelcomeViewController.swift in Sources */,
 				7397AC8624AC93B8007AE5E7 /* AppDelegate.swift in Sources */,

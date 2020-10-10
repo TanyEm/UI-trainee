@@ -33,8 +33,9 @@ class WelcomeViewController: UIViewController {
         let emitter = Emitter.get()
         emitter.emitterPosition = CGPoint(x: view.frame.width/2,
                                           y: view.frame.maxY)
-        emitter.emitterSize = CGSize(width: view.frame.width, height: 100)
-        view.layer.addSublayer(emitter)
+        emitter.emitterSize = CGSize(width: view.frame.width,
+                                     height: 100)
+        view.layer.insertSublayer(emitter, at: 0)
     }
         
     // MARK: - Navigation
@@ -45,7 +46,6 @@ class WelcomeViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
-
     }
 
 }

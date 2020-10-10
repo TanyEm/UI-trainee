@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-284" y="20"/>
+            <point key="canvasLocation" x="-284.05797101449275" y="19.419642857142858"/>
         </scene>
         <!--Phone Number View Controller-->
         <scene sceneID="5fO-SB-cWS">

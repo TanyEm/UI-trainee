@@ -45,7 +45,7 @@ class Emitter {
         let cell = CAEmitterCell()
         cell.contents = getNextImage(i: index)
         // birthRate - how many images appear at one time
-            cell.birthRate = 0.5
+        cell.birthRate = 0.5
         cell.lifetime = 50
         cell.velocity = CGFloat(getRandomVelocity())
         

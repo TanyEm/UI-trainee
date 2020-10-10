@@ -27,8 +27,10 @@ class WelcomeViewController: UIViewController {
         
     }
     
+    // MARK: - Animation
+    
     func makeFlyingEmoji() {
-        let emitter = Emitter.get(with: #imageLiteral(resourceName: "in-love"))
+        let emitter = Emitter.get()
         emitter.emitterPosition = CGPoint(x: view.frame.width/2,
                                           y: view.frame.maxY)
         emitter.emitterSize = CGSize(width: view.frame.width, height: 100)

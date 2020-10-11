@@ -102,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7366C9E02533A819005F7B55 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				739B3ECF2530F66100723529 /* Emitter.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		7397AC7924AC93B8007AE5E7 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +133,7 @@
 		7397AC8424AC93B8007AE5E7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7366C9E02533A819005F7B55 /* Services */,
 				7397ACB524ADFBAE007AE5E7 /* Fonts */,
 				7397AC8524AC93B8007AE5E7 /* AppDelegate.swift */,
 				7397AC8724AC93B8007AE5E7 /* SceneDelegate.swift */,
@@ -136,7 +145,6 @@
 				7397AC8E24AC93BF007AE5E7 /* Assets.xcassets */,
 				7397AC9024AC93BF007AE5E7 /* LaunchScreen.storyboard */,
 				7397AC9324AC93BF007AE5E7 /* Info.plist */,
-				739B3ECF2530F66100723529 /* Emitter.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";

@@ -262,14 +262,14 @@
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="s4n-pB-6Vz">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4n-pB-6Vz">
                                 <rect key="frame" x="19.5" y="261" width="375" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gD2-XZ-bXu">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="QaN-t0-tgo"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="QaN-t0-tgo"/>
                                             <constraint firstAttribute="height" constant="50" id="cXp-jw-Mpj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
@@ -280,7 +280,7 @@
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="3cE-1c-nwx"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Ne0-0X-Axg"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="Ne0-0X-Axg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -289,7 +289,7 @@
                                         <rect key="frame" x="130" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="ZIZ-EC-EM1"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="ZIZ-EC-EM1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -299,7 +299,7 @@
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="JWU-Hf-S3n"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="imO-kq-46R"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="imO-kq-46R"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -308,7 +308,7 @@
                                         <rect key="frame" x="260" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Pdc-zm-AW2"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="Pdc-zm-AW2"/>
                                             <constraint firstAttribute="height" constant="50" id="ciV-l2-QUV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
@@ -319,7 +319,7 @@
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="e0A-tr-3ja"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="gAp-M4-vgA"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="gAp-M4-vgA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -501,7 +501,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="H8W-bT-emf"/>
+        <segue reference="5PV-rL-Srq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cancel" width="310" height="294"/>

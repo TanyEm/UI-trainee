@@ -240,7 +240,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqB-qV-jvU">
-                                <rect key="frame" x="20" y="436" width="374" height="50"/>
+                                <rect key="frame" x="20" y="397" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="pID-CV-IOW"/>
                                 </constraints>
@@ -262,99 +262,87 @@
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4n-pB-6Vz">
-                                <rect key="frame" x="19.5" y="261" width="375" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VRZ-Er-TlE">
+                                <rect key="frame" x="20" y="253" width="374" height="55"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gD2-XZ-bXu">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4n-pB-6Vz">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gD2-XZ-bXu">
+                                                <rect key="frame" x="0.0" y="0.0" width="54" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-Cp-pi0">
+                                                <rect key="frame" x="64" y="0.0" width="54" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1aj-5Z-QfZ">
+                                                <rect key="frame" x="128" y="0.0" width="54" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qke-Dj-PD2">
+                                                <rect key="frame" x="192" y="0.0" width="54" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8n8-Wv-qwH">
+                                                <rect key="frame" x="256" y="0.0" width="54" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7gm-Gh-jU6">
+                                                <rect key="frame" x="320" y="0.0" width="54" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="QaN-t0-tgo"/>
-                                            <constraint firstAttribute="height" constant="50" id="cXp-jw-Mpj"/>
+                                            <constraint firstItem="8n8-Wv-qwH" firstAttribute="top" secondItem="s4n-pB-6Vz" secondAttribute="top" id="43g-gU-wKK"/>
+                                            <constraint firstAttribute="bottom" secondItem="8n8-Wv-qwH" secondAttribute="bottom" id="4UG-hb-rfh"/>
+                                            <constraint firstAttribute="bottom" secondItem="7gm-Gh-jU6" secondAttribute="bottom" id="Bds-i3-SnI"/>
+                                            <constraint firstAttribute="bottom" secondItem="1aj-5Z-QfZ" secondAttribute="bottom" id="CIM-R2-93w"/>
+                                            <constraint firstAttribute="trailing" secondItem="7gm-Gh-jU6" secondAttribute="trailing" id="FYe-JX-kLN"/>
+                                            <constraint firstItem="gD2-XZ-bXu" firstAttribute="leading" secondItem="s4n-pB-6Vz" secondAttribute="leading" id="Hvn-9v-bqw"/>
+                                            <constraint firstAttribute="bottom" secondItem="7gm-Gh-jU6" secondAttribute="bottom" id="Jur-iy-m85"/>
+                                            <constraint firstItem="qke-Dj-PD2" firstAttribute="top" secondItem="s4n-pB-6Vz" secondAttribute="top" id="LNQ-nr-yTT"/>
+                                            <constraint firstAttribute="bottom" secondItem="qke-Dj-PD2" secondAttribute="bottom" id="Q1k-zY-kqa"/>
+                                            <constraint firstItem="gD2-XZ-bXu" firstAttribute="top" secondItem="s4n-pB-6Vz" secondAttribute="top" id="ZmV-y2-zyu"/>
+                                            <constraint firstAttribute="bottom" secondItem="gD2-XZ-bXu" secondAttribute="bottom" id="maa-wZ-c83"/>
+                                            <constraint firstAttribute="bottom" secondItem="NZf-Cp-pi0" secondAttribute="bottom" id="ohI-Wg-E1q"/>
+                                            <constraint firstItem="1aj-5Z-QfZ" firstAttribute="top" secondItem="s4n-pB-6Vz" secondAttribute="top" id="xxr-Wo-Cqq"/>
+                                            <constraint firstItem="NZf-Cp-pi0" firstAttribute="top" secondItem="s4n-pB-6Vz" secondAttribute="top" id="y63-J8-MUx"/>
+                                            <constraint firstAttribute="height" constant="55" id="yY2-Fh-Gtp"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-Cp-pi0">
-                                        <rect key="frame" x="65" y="0.0" width="50" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="3cE-1c-nwx"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="Ne0-0X-Axg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1aj-5Z-QfZ">
-                                        <rect key="frame" x="130" y="0.0" width="50" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="ZIZ-EC-EM1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qke-Dj-PD2">
-                                        <rect key="frame" x="195" y="0.0" width="50" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="JWU-Hf-S3n"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="imO-kq-46R"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8n8-Wv-qwH">
-                                        <rect key="frame" x="260" y="0.0" width="50" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="Pdc-zm-AW2"/>
-                                            <constraint firstAttribute="height" constant="50" id="ciV-l2-QUV"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="•" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7gm-Gh-jU6">
-                                        <rect key="frame" x="325" y="0.0" width="50" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="e0A-tr-3ja"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="50" id="gAp-M4-vgA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="7gm-Gh-jU6" secondAttribute="trailing" id="FYe-JX-kLN"/>
-                                    <constraint firstItem="gD2-XZ-bXu" firstAttribute="leading" secondItem="s4n-pB-6Vz" secondAttribute="leading" id="Hvn-9v-bqw"/>
-                                    <constraint firstAttribute="bottom" secondItem="7gm-Gh-jU6" secondAttribute="bottom" id="Jur-iy-m85"/>
-                                    <constraint firstItem="gD2-XZ-bXu" firstAttribute="top" secondItem="s4n-pB-6Vz" secondAttribute="top" id="ZmV-y2-zyu"/>
-                                    <constraint firstAttribute="bottom" secondItem="gD2-XZ-bXu" secondAttribute="bottom" id="pUE-tP-0R4"/>
-                                    <constraint firstItem="7gm-Gh-jU6" firstAttribute="top" secondItem="s4n-pB-6Vz" secondAttribute="top" id="pZx-V9-YtI"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zUw-FF-ktn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zUw-FF-ktn" firstAttribute="trailing" secondItem="CqB-qV-jvU" secondAttribute="trailing" constant="20" id="2LE-zC-Alm"/>
-                            <constraint firstItem="s4n-pB-6Vz" firstAttribute="centerX" secondItem="CqB-qV-jvU" secondAttribute="centerX" id="4an-Q1-nMA"/>
                             <constraint firstItem="0vT-CS-Gzo" firstAttribute="trailing" secondItem="4pg-wA-CBe" secondAttribute="trailingMargin" id="CFQ-e0-j2K"/>
                             <constraint firstItem="CqB-qV-jvU" firstAttribute="leading" secondItem="zUw-FF-ktn" secondAttribute="leading" constant="20" id="G4V-dv-nDe"/>
-                            <constraint firstItem="s4n-pB-6Vz" firstAttribute="leading" secondItem="zUw-FF-ktn" secondAttribute="leading" constant="19.5" id="Gl1-bm-uNb"/>
+                            <constraint firstItem="CqB-qV-jvU" firstAttribute="top" secondItem="VRZ-Er-TlE" secondAttribute="bottom" constant="89" id="G8E-9y-DrP"/>
                             <constraint firstItem="0vT-CS-Gzo" firstAttribute="leading" secondItem="i5P-au-5BF" secondAttribute="leading" id="Hqk-PL-n0d"/>
+                            <constraint firstItem="VRZ-Er-TlE" firstAttribute="leading" secondItem="zUw-FF-ktn" secondAttribute="leading" constant="20" id="MPT-Ig-Kms"/>
+                            <constraint firstItem="zUw-FF-ktn" firstAttribute="trailing" secondItem="VRZ-Er-TlE" secondAttribute="trailing" constant="20" id="MWU-Cf-JS5"/>
                             <constraint firstItem="0vT-CS-Gzo" firstAttribute="top" secondItem="i5P-au-5BF" secondAttribute="bottom" constant="20" id="U48-GY-1H2"/>
                             <constraint firstItem="i5P-au-5BF" firstAttribute="top" secondItem="zUw-FF-ktn" secondAttribute="top" id="Xrg-xF-eMc"/>
-                            <constraint firstItem="zUw-FF-ktn" firstAttribute="trailing" secondItem="s4n-pB-6Vz" secondAttribute="trailing" constant="19.5" id="dER-DK-GNq"/>
-                            <constraint firstItem="CqB-qV-jvU" firstAttribute="trailing" secondItem="4pg-wA-CBe" secondAttribute="trailingMargin" id="dNb-74-yd5"/>
                             <constraint firstItem="0vT-CS-Gzo" firstAttribute="trailing" secondItem="Nqk-0H-BWy" secondAttribute="trailing" id="fPx-ad-fXm"/>
-                            <constraint firstItem="zUw-FF-ktn" firstAttribute="bottom" secondItem="CqB-qV-jvU" secondAttribute="bottom" constant="376" id="os4-BQ-wUq"/>
                             <constraint firstItem="0vT-CS-Gzo" firstAttribute="leading" secondItem="Nqk-0H-BWy" secondAttribute="leading" id="rWJ-q7-fgi"/>
                             <constraint firstItem="i5P-au-5BF" firstAttribute="leading" secondItem="4pg-wA-CBe" secondAttribute="leadingMargin" id="ttb-NZ-Yof"/>
-                            <constraint firstItem="s4n-pB-6Vz" firstAttribute="top" secondItem="Nqk-0H-BWy" secondAttribute="bottom" constant="16" id="udR-gA-9Qy"/>
-                            <constraint firstItem="s4n-pB-6Vz" firstAttribute="centerX" secondItem="Nqk-0H-BWy" secondAttribute="centerX" id="ugC-G6-kIO"/>
                             <constraint firstItem="Nqk-0H-BWy" firstAttribute="top" secondItem="0vT-CS-Gzo" secondAttribute="bottom" constant="24" id="uxh-Gl-HJv"/>
+                            <constraint firstItem="VRZ-Er-TlE" firstAttribute="top" secondItem="Nqk-0H-BWy" secondAttribute="bottom" constant="8" id="xQh-x4-ebL"/>
                         </constraints>
                     </view>
                     <connections>

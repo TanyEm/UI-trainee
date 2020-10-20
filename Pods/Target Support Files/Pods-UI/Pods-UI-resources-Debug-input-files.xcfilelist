@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-UI/Pods-UI-resources.sh
-${PODS_CONFIGURATION_BUILD_DIR}/FlagPhoneNumber/FlagPhoneNumber.bundle
+${PODS_ROOT}/CountryPickerSwift/CountryPicker/Classes/CountryView.xib
+${PODS_ROOT}/CountryPickerSwift/CountryPicker/Assets/CountryPicker.bundle
+${PODS_ROOT}/CountryPickerSwift/CountryPicker/Classes/Flags.xcassets

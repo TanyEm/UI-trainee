@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import CountryPicker
 
-
-class PhoneNumberViewController: UIViewController {
+class PhoneNumberViewController: UIViewController, CountryPickerDelegate {
 
     @IBOutlet weak var regionNumber: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var moveNext: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let picker = CountryPicker()
+        regionNumber.inputView = picker
+        let locale = Locale.current
+        guard let code = (locale as NSLocale).object(forKey: NSLocale.Key.countryCode) as! String? else {return}
+        
+        picker.displayOnlyCountriesWithCodes = ["DK", "SE", "NO", "DE"] //display only
+        picker.exeptCountriesWithCodes = ["RU"] //exept country
+        let theme = CountryViewTheme(countryCodeTextColor: .white, countryNameTextColor: .white, rowBackgroundColor: .black, showFlagsBorder: false)        //optional for UIPickerView theme changes
+        picker.theme = theme //optional for UIPickerView theme changes
+        picker.countryPickerDelegate = self
+        picker.showPhoneNumbers = true
+        picker.setCountry(code)
  
     }
     
@@ -93,6 +105,10 @@ class PhoneNumberViewController: UIViewController {
             phoneValidation = true
         }
         return phoneValidation
+    }
+    
+    func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
+        regionNumber.text = phoneCode
     }
     
     func displayMessage(userMessage:String) -> Void {

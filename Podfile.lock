@@ -1,18 +1,16 @@
 PODS:
-  - FlagPhoneNumber (0.8.0):
-    - FlagPhoneNumber/libPhoneNumberiOS (= 0.8.0)
-  - FlagPhoneNumber/libPhoneNumberiOS (0.8.0)
+  - CountryPickerSwift (1.8.2)
 
 DEPENDENCIES:
-  - FlagPhoneNumber
+  - CountryPickerSwift
 
 SPEC REPOS:
   trunk:
-    - FlagPhoneNumber
+    - CountryPickerSwift
 
 SPEC CHECKSUMS:
-  FlagPhoneNumber: 3712455b95f66cb0f2016fef7d9e34cddf8c7f9a
+  CountryPickerSwift: b2cd8b391a0222bd9a97d09ea30426303adac810
 
-PODFILE CHECKSUM: f9dcacbc2a47a6ed4bf8bf4716c27537af5818ff
+PODFILE CHECKSUM: 6253d5210c32cd8f810221ecf59aede41df9ddd3
 
 COCOAPODS: 1.9.3

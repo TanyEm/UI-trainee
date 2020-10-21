@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,7 @@
 		7397ACCD24B32DBF007AE5E7 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */; };
 		7397ACCF24B8AD25007AE5E7 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397ACCE24B8AD25007AE5E7 /* PinCodeViewController.swift */; };
 		739B3ED02530F66100723529 /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739B3ECF2530F66100723529 /* Emitter.swift */; };
+		73A281D7253F7FA900D589E9 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A281D6253F7FA900D589E9 /* CountryCode.swift */; };
 		73D5727424C858CA0056BA76 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D5727324C858CA0056BA76 /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
 		7397ACCE24B8AD25007AE5E7 /* PinCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
 		739B3ECF2530F66100723529 /* Emitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
+		73A281D6253F7FA900D589E9 /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
 		73D5727324C858CA0056BA76 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		D12056727A44BD57D1F67A82 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,7 +131,6 @@
 				56BDD0244E815376A5EB1DDF /* Pods-UITests.debug.xcconfig */,
 				D12056727A44BD57D1F67A82 /* Pods-UITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -137,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				739B3ECF2530F66100723529 /* Emitter.swift */,
+				73A281D6253F7FA900D589E9 /* CountryCode.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -227,7 +229,6 @@
 				7397AC7E24AC93B8007AE5E7 /* Sources */,
 				7397AC7F24AC93B8007AE5E7 /* Frameworks */,
 				7397AC8024AC93B8007AE5E7 /* Resources */,
-				574FD4FACAF2421E833E89D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -355,23 +356,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		574FD4FACAF2421E833E89D4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UI/Pods-UI-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UI/Pods-UI-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UI/Pods-UI-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B4FE11CF32ECE64FCBE0FB10 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,6 +410,7 @@
 				7397ACCD24B32DBF007AE5E7 /* PhoneNumberViewController.swift in Sources */,
 				739B3ED02530F66100723529 /* Emitter.swift in Sources */,
 				73D5727424C858CA0056BA76 /* UserInfoViewController.swift in Sources */,
+				73A281D7253F7FA900D589E9 /* CountryCode.swift in Sources */,
 				7397AC8A24AC93B8007AE5E7 /* WelcomeViewController.swift in Sources */,
 				7397AC8624AC93B8007AE5E7 /* AppDelegate.swift in Sources */,
 				7397ACCF24B8AD25007AE5E7 /* PinCodeViewController.swift in Sources */,

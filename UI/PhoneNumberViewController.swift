@@ -7,29 +7,27 @@
 //
 
 import UIKit
-import CountryPicker
 
-class PhoneNumberViewController: UIViewController, CountryPickerDelegate {
+class PhoneNumberViewController: UIViewController {
 
     @IBOutlet weak var regionNumber: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var moveNext: UIButton!
     
+    var codes:[String] = [
+        "+358",
+        "+7",
+        "+3"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let picker = CountryPicker()
+        let picker = UIPickerView()
         regionNumber.inputView = picker
-        let locale = Locale.current
-        guard let code = (locale as NSLocale).object(forKey: NSLocale.Key.countryCode) as! String? else {return}
         
-        picker.displayOnlyCountriesWithCodes = ["DK", "SE", "NO", "DE"] //display only
-        picker.exeptCountriesWithCodes = ["RU"] //exept country
-        let theme = CountryViewTheme(countryCodeTextColor: .white, countryNameTextColor: .white, rowBackgroundColor: .black, showFlagsBorder: false)        //optional for UIPickerView theme changes
-        picker.theme = theme //optional for UIPickerView theme changes
-        picker.countryPickerDelegate = self
-        picker.showPhoneNumbers = true
-        picker.setCountry(code)
+        picker.delegate = self
+        picker.dataSource = self
  
     }
     
@@ -84,7 +82,7 @@ class PhoneNumberViewController: UIViewController, CountryPickerDelegate {
     }
     
     @IBAction func moveToNextScreen(_ sender: Any) {
-        regionNumber.text = "+358"
+        //regionNumber.text = "+358"
         phoneNumber.text = "123456789"
         guard let regionCode = regionNumber.text else { return }
         guard let phoneNumber = phoneNumber.text else { return }
@@ -106,11 +104,7 @@ class PhoneNumberViewController: UIViewController, CountryPickerDelegate {
         }
         return phoneValidation
     }
-    
-    func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
-        regionNumber.text = phoneCode
-    }
-    
+        
     func displayMessage(userMessage:String) -> Void {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: "Error",
@@ -140,4 +134,24 @@ class PhoneNumberViewController: UIViewController, CountryPickerDelegate {
     }
     */
 
+}
+
+extension PhoneNumberViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        codes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        codes[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        regionNumber.text = codes[row]
+        regionNumber.resignFirstResponder()
+    }
+    
 }

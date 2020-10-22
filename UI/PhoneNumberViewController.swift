@@ -14,6 +14,7 @@ class PhoneNumberViewController: UIViewController {
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var moveNext: UIButton!
     
+    var selectedCountry: String?
     var codes:[String] = [
         "+358",
         "+7",
@@ -22,13 +23,9 @@ class PhoneNumberViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let picker = UIPickerView()
-        regionNumber.inputView = picker
         
-        picker.delegate = self
-        picker.dataSource = self
- 
+        createPicker()
+        dismissAndClosePicker()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,6 +120,30 @@ class PhoneNumberViewController: UIViewController {
         }
     }
     
+    func createPicker() {
+        let picker = UIPickerView()
+        regionNumber.inputView = picker
+        
+        picker.delegate = self
+        picker.dataSource = self
+    }
+    
+    func dismissAndClosePicker() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dissmissAction))
+        toolBar.setItems([button], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        regionNumber.inputAccessoryView = toolBar
+        
+    }
+    
+    @objc func dissmissAction() {
+        regionNumber.resignFirstResponder()
+        self.view.endEditing(true)
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -136,7 +157,7 @@ class PhoneNumberViewController: UIViewController {
 
 }
 
-extension PhoneNumberViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+extension PhoneNumberViewController: UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
@@ -151,7 +172,6 @@ extension PhoneNumberViewController: UIPickerViewDataSource, UIPickerViewDelegat
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         regionNumber.text = codes[row]
-        regionNumber.resignFirstResponder()
     }
     
 }

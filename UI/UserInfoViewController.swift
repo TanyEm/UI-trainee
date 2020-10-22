@@ -14,10 +14,15 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var birthdayField: UITextField!
     @IBOutlet weak var goNext: UIButton!
     @IBOutlet weak var datePicker: UITextField!
+    
+    let picker = UIDatePicker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        birthdayField.inputView = picker
+        picker.datePickerMode = .date
+        picker.addTarget(self, action: #selector(datePickerChanged(date:)), for: .valueChanged)
     }
     
     @IBAction func moveToPhoneNumberToStartAgain(_ sender: Any) {
@@ -44,15 +49,21 @@ class UserInfoViewController: UIViewController {
         goNext.layer.cornerRadius = 20
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func datePickerChanged(date: UIDatePicker) {
+        if date.isEqual(self.picker) {
+            birthdayField.text = dateFormatter(str: date.date)
+        } else {
+            print(Error.self)
+        }
     }
-    */
-
+    
+    func dateFormatter(str: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        let formattedString = dateFormatter.string(from: str)
+        
+        return formattedString
+    }
+    
 }
+

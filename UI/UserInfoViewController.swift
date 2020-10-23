@@ -1,10 +1,3 @@
-//
-//  UserInfoViewController.swift
-//  UI
-//
-//  Created by Tatiana Podlesnykh on 22.7.2020.
-//  Copyright © 2020 Tatiana Podlesnykh. All rights reserved.
-//
 
 import UIKit
 
@@ -20,9 +13,7 @@ class UserInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        birthdayField.inputView = picker
-        picker.datePickerMode = .date
-        picker.addTarget(self, action: #selector(datePickerChanged(date:)), for: .valueChanged)
+        createPicker()
     }
     
     @IBAction func moveToPhoneNumberToStartAgain(_ sender: Any) {
@@ -47,6 +38,16 @@ class UserInfoViewController: UIViewController {
         birthdayField.leftViewMode = UITextField.ViewMode.always
         
         goNext.layer.cornerRadius = 20
+    }
+    
+    // MARK: - DatePicker and Formatter
+    
+    func createPicker() {
+        birthdayField.inputView = picker
+        picker.datePickerMode = .date
+        picker.preferredDatePickerStyle = .compact
+        
+        picker.addTarget(self, action: #selector(datePickerChanged(date:)), for: .valueChanged)
     }
     
     @objc func datePickerChanged(date: UIDatePicker) {

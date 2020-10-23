@@ -1,10 +1,3 @@
-//
-//  PhoneNumberViewController.swift
-//  UI
-//
-//  Created by Tatiana Podlesnykh on 6.7.2020.
-//  Copyright © 2020 Tatiana Podlesnykh. All rights reserved.
-//
 
 import UIKit
 
@@ -79,8 +72,6 @@ class PhoneNumberViewController: UIViewController {
     }
     
     @IBAction func moveToNextScreen(_ sender: Any) {
-        //regionNumber.text = "+358"
-        phoneNumber.text = "123456789"
         guard let regionCode = regionNumber.text else { return }
         guard let phoneNumber = phoneNumber.text else { return }
         
@@ -92,6 +83,8 @@ class PhoneNumberViewController: UIViewController {
         }
     }
     
+    // MARK: - Phone validation
+    
     func isPhoneNumerIsValid(code: String, number: String) -> Bool {
         let phoneValidation: Bool
         if code.isEmpty && number.isEmpty {
@@ -101,6 +94,8 @@ class PhoneNumberViewController: UIViewController {
         }
         return phoneValidation
     }
+    
+    // MARK: - Alert message
         
     func displayMessage(userMessage:String) -> Void {
         DispatchQueue.main.async {
@@ -119,6 +114,8 @@ class PhoneNumberViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    // MARK: - DatePicker
     
     func createPicker() {
         let picker = UIPickerView()
@@ -143,17 +140,6 @@ class PhoneNumberViewController: UIViewController {
         regionNumber.resignFirstResponder()
         self.view.endEditing(true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

@@ -38,6 +38,15 @@ class UserInfoViewController: UIViewController {
         birthdayField.leftViewMode = UITextField.ViewMode.always
         
         goNext.layer.cornerRadius = 20
+        
+        // add image on the right side of text field
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 18, width: 20, height: 15))
+        let image = #imageLiteral(resourceName: "arrow-down")
+        imageView.image = image
+        let iconContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: 50))
+        iconContainerView.addSubview(imageView)
+        birthdayField.rightView = iconContainerView
+        birthdayField.rightViewMode = .always
     }
     
     // MARK: - DatePicker and Formatter
@@ -66,5 +75,16 @@ class UserInfoViewController: UIViewController {
         return formattedString
     }
     
+}
+
+extension UITextField {
+    func setIcon(_ image: UIImage) {
+        let iconView = UIImageView(frame: CGRect(x: 10, y: 5, width: 20, height: 20))
+        iconView.image = image
+        let iconContainerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
+        iconContainerView.addSubview(iconView)
+        leftView = iconContainerView
+        leftViewMode = .always
+    }
 }
 

@@ -40,13 +40,9 @@ class UserInfoViewController: UIViewController {
         goNext.layer.cornerRadius = 20
         
         // add image on the right side of text field
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 18, width: 20, height: 15))
-        let image = #imageLiteral(resourceName: "arrow-down")
-        imageView.image = image
-        let iconContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: 50))
-        iconContainerView.addSubview(imageView)
-        birthdayField.rightView = iconContainerView
-        birthdayField.rightViewMode = .always
+        let arrow = TextFieldArrowOnTheRightSide()
+        arrow.makeArrow(field: birthdayField)
+        
     }
     
     // MARK: - DatePicker and Formatter

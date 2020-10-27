@@ -64,6 +64,11 @@ class PhoneNumberViewController: UIViewController {
         
         // the moveNext layer
         moveNext.layer.cornerRadius = 20
+        
+        // add image on the right side of text field
+        let arrow = TextFieldArrowOnTheRightSide()
+        arrow.makeArrow(field: regionNumber)
+
                 
     }
     

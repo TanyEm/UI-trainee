@@ -9,9 +9,10 @@ class PhoneNumberViewController: UIViewController {
     
     var selectedCountry: String?
     var codes:[String] = [
+        "+1",
+        "+3",
         "+358",
-        "+7",
-        "+3"
+        "+7"
     ]
     
     override func viewDidLoad() {

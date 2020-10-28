@@ -6,6 +6,7 @@ class PhoneNumberViewController: UIViewController {
     @IBOutlet weak var regionNumber: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var moveNext: UIButton!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     var selectedCountry: String?
     var codes:[String] = [
@@ -17,6 +18,10 @@ class PhoneNumberViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
         
         createPicker()
         dismissAndClosePicker()
@@ -68,9 +73,7 @@ class PhoneNumberViewController: UIViewController {
         
         // add image on the right side of text field
         let arrow = TextFieldArrowOnTheRightSide()
-        arrow.makeArrow(field: regionNumber)
-
-                
+        arrow.makeArrow(field: regionNumber)  
     }
     
     @IBAction func moveToWelcome(_ sender: Any) {
@@ -145,6 +148,18 @@ class PhoneNumberViewController: UIViewController {
     @objc func dissmissAction() {
         regionNumber.resignFirstResponder()
         self.view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        print("keyboardWillShow")
+        self.bottomConstraint.constant = 300
+        
+
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        print("keyboardWillHide")
+        self.bottomConstraint.constant = 300
     }
 
 }

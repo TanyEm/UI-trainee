@@ -10,6 +10,7 @@
 		4C1DF1A42D8D7C949130BB14 /* libPods-UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 084808B33DF47F81B6596CE9 /* libPods-UITests.a */; };
 		60FF22F264CCF947BFEB2F0E /* libPods-UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC903D6CC939A66C20D75D /* libPods-UI.a */; };
 		7330516C2548187F00AB3510 /* TextFieldArrowOnTheRightSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7330516B2548187F00AB3510 /* TextFieldArrowOnTheRightSide.swift */; };
+		7330517425483EAB00AB3510 /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7330517325483EAB00AB3510 /* ButtonWithImage.swift */; };
 		7397AC8624AC93B8007AE5E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397AC8524AC93B8007AE5E7 /* AppDelegate.swift */; };
 		7397AC8824AC93B8007AE5E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397AC8724AC93B8007AE5E7 /* SceneDelegate.swift */; };
 		7397AC8A24AC93B8007AE5E7 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397AC8924AC93B8007AE5E7 /* WelcomeViewController.swift */; };
@@ -57,6 +58,7 @@
 		45DC903D6CC939A66C20D75D /* libPods-UI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56BDD0244E815376A5EB1DDF /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7330516B2548187F00AB3510 /* TextFieldArrowOnTheRightSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldArrowOnTheRightSide.swift; sourceTree = "<group>"; };
+		7330517325483EAB00AB3510 /* ButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImage.swift; sourceTree = "<group>"; };
 		7397AC8224AC93B8007AE5E7 /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7397AC8524AC93B8007AE5E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7397AC8724AC93B8007AE5E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				739B3ECF2530F66100723529 /* Emitter.swift */,
 				7330516B2548187F00AB3510 /* TextFieldArrowOnTheRightSide.swift */,
+				7330517325483EAB00AB3510 /* ButtonWithImage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7397ACCD24B32DBF007AE5E7 /* PhoneNumberViewController.swift in Sources */,
+				7330517425483EAB00AB3510 /* ButtonWithImage.swift in Sources */,
 				739B3ED02530F66100723529 /* Emitter.swift in Sources */,
 				73D5727424C858CA0056BA76 /* UserInfoViewController.swift in Sources */,
 				7397AC8A24AC93B8007AE5E7 /* WelcomeViewController.swift in Sources */,

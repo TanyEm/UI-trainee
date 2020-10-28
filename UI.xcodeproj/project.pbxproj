@@ -31,6 +31,8 @@
 		7397ACCD24B32DBF007AE5E7 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */; };
 		7397ACCF24B8AD25007AE5E7 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397ACCE24B8AD25007AE5E7 /* PinCodeViewController.swift */; };
 		739B3ED02530F66100723529 /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739B3ECF2530F66100723529 /* Emitter.swift */; };
+		73A33E5A2549B217001D9168 /* ButtonMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E592549B217001D9168 /* ButtonMover.swift */; };
+		73A33E5F254A01B0001D9168 /* GesturesHendler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E5E254A01B0001D9168 /* GesturesHendler.swift */; };
 		73D5727424C858CA0056BA76 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D5727324C858CA0056BA76 /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +87,8 @@
 		7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
 		7397ACCE24B8AD25007AE5E7 /* PinCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
 		739B3ECF2530F66100723529 /* Emitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
+		73A33E592549B217001D9168 /* ButtonMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMover.swift; sourceTree = "<group>"; };
+		73A33E5E254A01B0001D9168 /* GesturesHendler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesHendler.swift; sourceTree = "<group>"; };
 		73D5727324C858CA0056BA76 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		D12056727A44BD57D1F67A82 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +146,8 @@
 				739B3ECF2530F66100723529 /* Emitter.swift */,
 				7330516B2548187F00AB3510 /* TextFieldArrowOnTheRightSide.swift */,
 				7330517325483EAB00AB3510 /* ButtonWithImage.swift */,
+				73A33E592549B217001D9168 /* ButtonMover.swift */,
+				73A33E5E254A01B0001D9168 /* GesturesHendler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -414,7 +420,9 @@
 				7330517425483EAB00AB3510 /* ButtonWithImage.swift in Sources */,
 				739B3ED02530F66100723529 /* Emitter.swift in Sources */,
 				73D5727424C858CA0056BA76 /* UserInfoViewController.swift in Sources */,
+				73A33E5F254A01B0001D9168 /* GesturesHendler.swift in Sources */,
 				7397AC8A24AC93B8007AE5E7 /* WelcomeViewController.swift in Sources */,
+				73A33E5A2549B217001D9168 /* ButtonMover.swift in Sources */,
 				7397AC8624AC93B8007AE5E7 /* AppDelegate.swift in Sources */,
 				7397ACCF24B8AD25007AE5E7 /* PinCodeViewController.swift in Sources */,
 				7397AC8824AC93B8007AE5E7 /* SceneDelegate.swift in Sources */,

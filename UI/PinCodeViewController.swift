@@ -20,9 +20,21 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var fifthCell: UITextField!
     @IBOutlet weak var sixthCell: UITextField!
     @IBOutlet weak var sentPin: UIButton!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    var buttonMover: ButtonMover?
+    var gestureHendler: GesturesHendler?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        gestureHendler = GesturesHendler(view: self.view)
+        gestureHendler?.gestureRecognizer()
+        
+        buttonMover = ButtonMover(view: self.view, constraint: self.bottomConstraint)
+        guard let mover = buttonMover else {return}
+        
+        NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         firstCell.delegate = self
         secondCell.delegate = self
@@ -49,6 +61,13 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
         repeats: true)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        guard let mover = buttonMover else {return}
+       
+        NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
     
     @IBAction func moveToPhoneNumber(_ sender: Any) {
         performSegue(withIdentifier: "MoveToChangePhoneNumber", sender: self)
@@ -144,15 +163,5 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
         }
         return true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

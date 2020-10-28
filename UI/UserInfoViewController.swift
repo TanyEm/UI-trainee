@@ -7,17 +7,25 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var birthdayField: UITextField!
     @IBOutlet weak var goNext: UIButton!
     @IBOutlet weak var datePicker: UITextField!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
+    var buttonMover: ButtonMover?
+    var gestureHendler: GesturesHendler?
     let picker = UIDatePicker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        gestureHendler = GesturesHendler(view: self.view)
+        gestureHendler?.gestureRecognizer()
+        
+        buttonMover = ButtonMover(view: self.view, constraint: self.bottomConstraint)
+        guard let mover = buttonMover else {return}
+                
+        NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         createPicker()
-    }
-    
-    @IBAction func moveToPhoneNumberToStartAgain(_ sender: Any) {
-        performSegue(withIdentifier: "RegisterAgain", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +53,18 @@ class UserInfoViewController: UIViewController {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        guard let mover = buttonMover else {return}
+       
+        NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @IBAction func moveToPhoneNumberToStartAgain(_ sender: Any) {
+        performSegue(withIdentifier: "RegisterAgain", sender: self)
+    }
+        
     // MARK: - DatePicker and Formatter
     
     func createPicker() {

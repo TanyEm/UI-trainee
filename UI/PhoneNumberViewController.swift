@@ -8,6 +8,8 @@ class PhoneNumberViewController: UIViewController {
     @IBOutlet weak var moveNext: UIButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
+    var buttonMover: ButtonMover?
+    var gestureHendler: GesturesHendler?
     var selectedCountry: String?
     var codes:[String] = [
         "+1",
@@ -18,14 +20,17 @@ class PhoneNumberViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        gestureHendler = GesturesHendler(view: self.view)
+        gestureHendler?.gestureRecognizer()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
+        buttonMover = ButtonMover(view: self.view, constraint: self.bottomConstraint)
+        guard let mover = buttonMover else {return}
+                
+        NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         createPicker()
         dismissAndClosePicker()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,12 +80,16 @@ class PhoneNumberViewController: UIViewController {
         // add image on the right side of text field
         let arrow = TextFieldArrowOnTheRightSide()
         arrow.makeArrow(field: regionNumber)
-        
-        // hide keyboad when user taps to view
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tap)
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        guard let mover = buttonMover else {return}
+       
+        NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+
     
     @IBAction func moveToWelcome(_ sender: Any) {
         performSegue(withIdentifier: "MoveToWelcome", sender: self)
@@ -153,22 +162,6 @@ class PhoneNumberViewController: UIViewController {
     
     @objc func dissmissAction() {
         regionNumber.resignFirstResponder()
-        self.view.endEditing(true)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        print("keyboardWillShow")
-        self.bottomConstraint.constant = 300
-        
-
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        print("keyboardWillHide")
-        self.bottomConstraint.constant = 20
-    }
-    
-    @objc func dismissKeyboard() {
         self.view.endEditing(true)
     }
 

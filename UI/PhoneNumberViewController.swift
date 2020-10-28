@@ -25,6 +25,7 @@ class PhoneNumberViewController: UIViewController {
         
         createPicker()
         dismissAndClosePicker()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +74,12 @@ class PhoneNumberViewController: UIViewController {
         
         // add image on the right side of text field
         let arrow = TextFieldArrowOnTheRightSide()
-        arrow.makeArrow(field: regionNumber)  
+        arrow.makeArrow(field: regionNumber)
+        
+        // hide keyboad when user taps to view
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
     
     @IBAction func moveToWelcome(_ sender: Any) {
@@ -159,7 +165,11 @@ class PhoneNumberViewController: UIViewController {
 
     @objc func keyboardWillHide(notification: NSNotification) {
         print("keyboardWillHide")
-        self.bottomConstraint.constant = 300
+        self.bottomConstraint.constant = 20
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
     }
 
 }

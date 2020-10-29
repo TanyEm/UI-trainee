@@ -33,6 +33,7 @@
 		739B3ED02530F66100723529 /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739B3ECF2530F66100723529 /* Emitter.swift */; };
 		73A33E5A2549B217001D9168 /* ButtonMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E592549B217001D9168 /* ButtonMover.swift */; };
 		73A33E5F254A01B0001D9168 /* GesturesHendler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E5E254A01B0001D9168 /* GesturesHendler.swift */; };
+		73A33E64254B6847001D9168 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E63254B6847001D9168 /* PhotoEditorViewController.swift */; };
 		73D5727424C858CA0056BA76 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D5727324C858CA0056BA76 /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		739B3ECF2530F66100723529 /* Emitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
 		73A33E592549B217001D9168 /* ButtonMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMover.swift; sourceTree = "<group>"; };
 		73A33E5E254A01B0001D9168 /* GesturesHendler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesHendler.swift; sourceTree = "<group>"; };
+		73A33E63254B6847001D9168 /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
 		73D5727324C858CA0056BA76 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		D12056727A44BD57D1F67A82 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +187,7 @@
 				7397ACCC24B32DBF007AE5E7 /* PhoneNumberViewController.swift */,
 				7397ACCE24B8AD25007AE5E7 /* PinCodeViewController.swift */,
 				73D5727324C858CA0056BA76 /* UserInfoViewController.swift */,
+				73A33E63254B6847001D9168 /* PhotoEditorViewController.swift */,
 				7397AC8B24AC93B8007AE5E7 /* Main.storyboard */,
 				7397AC8E24AC93BF007AE5E7 /* Assets.xcassets */,
 				7397AC9024AC93BF007AE5E7 /* LaunchScreen.storyboard */,
@@ -418,6 +421,7 @@
 			files = (
 				7397ACCD24B32DBF007AE5E7 /* PhoneNumberViewController.swift in Sources */,
 				7330517425483EAB00AB3510 /* ButtonWithImage.swift in Sources */,
+				73A33E64254B6847001D9168 /* PhotoEditorViewController.swift in Sources */,
 				739B3ED02530F66100723529 /* Emitter.swift in Sources */,
 				73D5727424C858CA0056BA76 /* UserInfoViewController.swift in Sources */,
 				73A33E5F254A01B0001D9168 /* GesturesHendler.swift in Sources */,

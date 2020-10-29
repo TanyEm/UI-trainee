@@ -471,6 +471,7 @@
                             <constraint firstItem="pww-Ew-brr" firstAttribute="trailing" secondItem="TIT-1I-vQE" secondAttribute="trailingMargin" id="v1s-Xu-HfK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="h1W-h7-id4"/>
                     <connections>
                         <outlet property="birthdayField" destination="Qtw-R7-B7a" id="UxE-ff-dmt"/>
                         <outlet property="bottomConstraint" destination="NLj-SP-Qhu" id="lAb-2P-3NP"/>
@@ -484,8 +485,62 @@
             </objects>
             <point key="canvasLocation" x="2198.5507246376815" y="26.785714285714285"/>
         </scene>
+        <!--Photo Editor View Controller-->
+        <scene sceneID="HHp-cH-Who">
+            <objects>
+                <viewController id="KMf-mJ-d4s" customClass="PhotoEditorViewController" customModule="UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Xx-hx-JmB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbV-d4-oDr">
+                                <rect key="frame" x="20" y="832" width="374" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgR-0B-ZSL">
+                                <rect key="frame" x="10" y="54" width="47" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="1qC-tE-tDB"/>
+                                    <constraint firstAttribute="height" constant="45" id="4X4-67-HYH"/>
+                                </constraints>
+                                <state key="normal" image="cancel"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NnI-Zo-OGg">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add profile photo ❤️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l51-9v-lHT">
+                                <rect key="frame" x="20" y="119" width="374" height="39"/>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Bold" family="SF Compact Rounded" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s7l-EH-5Wk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="s7l-EH-5Wk" firstAttribute="trailing" secondItem="IbV-d4-oDr" secondAttribute="trailing" constant="20" id="Iyf-aC-tP9"/>
+                            <constraint firstItem="l51-9v-lHT" firstAttribute="leading" secondItem="s7l-EH-5Wk" secondAttribute="leading" constant="20" id="PeR-KD-EeZ"/>
+                            <constraint firstItem="s7l-EH-5Wk" firstAttribute="trailing" secondItem="l51-9v-lHT" secondAttribute="trailing" constant="20" id="SdT-X1-RG6"/>
+                            <constraint firstItem="l51-9v-lHT" firstAttribute="top" secondItem="KgR-0B-ZSL" secondAttribute="bottom" constant="20" id="dhs-iS-6ZL"/>
+                            <constraint firstItem="KgR-0B-ZSL" firstAttribute="leading" secondItem="s7l-EH-5Wk" secondAttribute="leading" constant="10" id="fZm-sh-QRT"/>
+                            <constraint firstItem="IbV-d4-oDr" firstAttribute="bottom" secondItem="s7l-EH-5Wk" secondAttribute="bottom" id="m6P-Qs-a9l"/>
+                            <constraint firstItem="IbV-d4-oDr" firstAttribute="leading" secondItem="s7l-EH-5Wk" secondAttribute="leading" constant="20" id="qyW-ZW-eSJ"/>
+                            <constraint firstItem="KgR-0B-ZSL" firstAttribute="top" secondItem="s7l-EH-5Wk" secondAttribute="top" constant="10" id="ruX-IB-9nr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="m6P-Qs-a9l" id="hD1-9S-rey"/>
+                        <segue destination="V4N-2t-b06" kind="presentation" identifier="MoveToUserInfo" modalPresentationStyle="fullScreen" id="DxJ-38-WEb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rk1-Wj-cbx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2985.507246376812" y="26.785714285714285"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="DxJ-38-WEb"/>
         <segue reference="pcd-lv-y5R"/>
     </inferredMetricsTieBreakers>
     <resources>

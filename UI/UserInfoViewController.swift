@@ -12,6 +12,8 @@ class UserInfoViewController: UIViewController {
     var buttonMover: ButtonMover?
     var gestureHendler: GesturesHendler?
     let picker = UIDatePicker()
+    var name: String?
+    var birthday: Date?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +66,27 @@ class UserInfoViewController: UIViewController {
     @IBAction func moveToPhoneNumberToStartAgain(_ sender: Any) {
         performSegue(withIdentifier: "RegisterAgain", sender: self)
     }
+    
+    @IBAction func moveToNextScreen(_ sender: Any) {
+        name = nameField.text
+        guard let userName = name else {return}
+        guard let userBirthday = birthdayField.text else {return}
+
+        if userInfoIsValid(name: userName, birthday: userBirthday) {
+            // send here raw birthday date to a server (self.birthday)
+            performSegue(withIdentifier: "GoNext", sender: self)
+        } else {
+            let messageAlert = MessageAlert()
+            messageAlert.showMessage(on: self, with: "Error", message: "One of the required fields is missing. Try to fill it again")
+        }
+    }
+    
+    func userInfoIsValid(name: String, birthday: String) -> Bool {
+        if !name.isEmpty && !birthday.isEmpty {
+            return true
+        }
+        return false
+    }
         
     // MARK: - DatePicker and Formatter
     
@@ -78,6 +101,7 @@ class UserInfoViewController: UIViewController {
     @objc func datePickerChanged(date: UIDatePicker) {
         if date.isEqual(self.picker) {
             birthdayField.text = dateFormatter(str: date.date)
+            birthday = date.date
         } else {
             print(Error.self)
         }

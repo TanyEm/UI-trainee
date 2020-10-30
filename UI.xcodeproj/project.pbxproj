@@ -34,6 +34,7 @@
 		73A33E5A2549B217001D9168 /* ButtonMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E592549B217001D9168 /* ButtonMover.swift */; };
 		73A33E5F254A01B0001D9168 /* GesturesHendler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E5E254A01B0001D9168 /* GesturesHendler.swift */; };
 		73A33E64254B6847001D9168 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E63254B6847001D9168 /* PhotoEditorViewController.swift */; };
+		73A33E6C254C3404001D9168 /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E6B254C3404001D9168 /* MessageAlert.swift */; };
 		73D5727424C858CA0056BA76 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D5727324C858CA0056BA76 /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		73A33E592549B217001D9168 /* ButtonMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMover.swift; sourceTree = "<group>"; };
 		73A33E5E254A01B0001D9168 /* GesturesHendler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesHendler.swift; sourceTree = "<group>"; };
 		73A33E63254B6847001D9168 /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
+		73A33E6B254C3404001D9168 /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
 		73D5727324C858CA0056BA76 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		D12056727A44BD57D1F67A82 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +152,7 @@
 				7330517325483EAB00AB3510 /* ButtonWithImage.swift */,
 				73A33E592549B217001D9168 /* ButtonMover.swift */,
 				73A33E5E254A01B0001D9168 /* GesturesHendler.swift */,
+				73A33E6B254C3404001D9168 /* MessageAlert.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				73A33E5F254A01B0001D9168 /* GesturesHendler.swift in Sources */,
 				7397AC8A24AC93B8007AE5E7 /* WelcomeViewController.swift in Sources */,
 				73A33E5A2549B217001D9168 /* ButtonMover.swift in Sources */,
+				73A33E6C254C3404001D9168 /* MessageAlert.swift in Sources */,
 				7397AC8624AC93B8007AE5E7 /* AppDelegate.swift in Sources */,
 				7397ACCF24B8AD25007AE5E7 /* PinCodeViewController.swift in Sources */,
 				7397AC8824AC93B8007AE5E7 /* SceneDelegate.swift in Sources */,

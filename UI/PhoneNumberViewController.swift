@@ -99,17 +99,17 @@ class PhoneNumberViewController: UIViewController {
         guard let regionCode = regionNumber.text else { return }
         guard let phoneNumber = phoneNumber.text else { return }
         
-        let isValid = isPhoneNumerIsValid(code: regionCode, number: phoneNumber)
-        if isValid == true {
+        if phoneNumerIsValid(code: regionCode, number: phoneNumber) {
             performSegue(withIdentifier: "GoNext", sender: self)
         } else {
-            displayMessage(userMessage: "Your phone number is empty. Try to fill it again")
+            let messageAlert = MessageAlert()
+            messageAlert.showMessage(on: self, with: "Error", message: "Your phone number is empty. Try to fill it again")
         }
     }
     
     // MARK: - Phone validation
     
-    func isPhoneNumerIsValid(code: String, number: String) -> Bool {
+    func phoneNumerIsValid(code: String, number: String) -> Bool {
         let phoneValidation: Bool
         if code.isEmpty && number.isEmpty {
             phoneValidation = false
@@ -118,27 +118,7 @@ class PhoneNumberViewController: UIViewController {
         }
         return phoneValidation
     }
-    
-    // MARK: - Alert message
         
-    func displayMessage(userMessage:String) -> Void {
-        DispatchQueue.main.async {
-            let alertController = UIAlertController(title: "Error",
-                                                    message: userMessage,
-                                                    preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "OK",
-                                            style: .default,
-                                            handler: { (action: UIAlertAction) in
-                //Will working when OK tapped
-                DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
-                }
-            })
-            alertController.addAction(alertAction)
-            self.present(alertController, animated: true, completion: nil)
-        }
-    }
-    
     // MARK: - DatePicker
     
     func createPicker() {

@@ -561,6 +561,7 @@
                     </view>
                     <connections>
                         <outlet property="photoAdditionButton" destination="IbV-d4-oDr" id="rUD-PO-nNq"/>
+                        <outlet property="usersPhotoImage" destination="NnI-Zo-OGg" id="kT7-B7-sMa"/>
                         <segue destination="V4N-2t-b06" kind="presentation" identifier="MoveToUserInfo" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="DxJ-38-WEb"/>
                     </connections>
                 </viewController>

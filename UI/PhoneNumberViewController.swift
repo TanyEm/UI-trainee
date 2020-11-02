@@ -103,7 +103,7 @@ class PhoneNumberViewController: UIViewController {
             performSegue(withIdentifier: "GoNext", sender: self)
         } else {
             let messageAlert = MessageAlert()
-            messageAlert.showMessage(on: self, with: "Error", message: "Your phone number is empty. Try to fill it again")
+            messageAlert.showMessage(on: self, with: "Ooops!", message: "Your phone number is empty. Try to fill it again")
         }
     }
     

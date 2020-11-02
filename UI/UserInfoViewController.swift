@@ -77,7 +77,7 @@ class UserInfoViewController: UIViewController {
             performSegue(withIdentifier: "GoNext", sender: self)
         } else {
             let messageAlert = MessageAlert()
-            messageAlert.showMessage(on: self, with: "Error", message: "One of the required fields is missing. Try to fill it again")
+            messageAlert.showMessage(on: self, with: "Ooops!", message: "One of the required fields is missing. Try to fill it again")
         }
     }
     

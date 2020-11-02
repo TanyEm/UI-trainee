@@ -10,7 +10,7 @@ import UIKit
 
 class PhotoEditorViewController: UIViewController {
     
-    @IBOutlet weak var usersPhotoImage: UIImage!
+    @IBOutlet weak var usersPhotoImage: UIImageView!
     @IBOutlet weak var photoAdditionButton: UIButton!
 
     override func viewDidLoad() {

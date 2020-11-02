@@ -10,9 +10,8 @@ import UIKit
 
 class PhotoEditorViewController: UIViewController {
     
-    @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var usersPhotoImage: UIImage!
     @IBOutlet weak var photoAdditionButton: UIButton!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()

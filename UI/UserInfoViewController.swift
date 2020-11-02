@@ -93,7 +93,7 @@ class UserInfoViewController: UIViewController {
     func createPicker() {
         birthdayField.inputView = picker
         picker.datePickerMode = .date
-        picker.preferredDatePickerStyle = .compact
+        picker.preferredDatePickerStyle = .wheels
         
         picker.addTarget(self, action: #selector(datePickerChanged(date:)), for: .valueChanged)
     }

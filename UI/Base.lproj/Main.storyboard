@@ -537,6 +537,9 @@
                                 <state key="normal" title="Skip for now">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="movePreviousScreen:" destination="KMf-mJ-d4s" eventType="touchUpInside" id="69F-YZ-eb1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s7l-EH-5Wk"/>
@@ -558,7 +561,6 @@
                     </view>
                     <connections>
                         <outlet property="photoAdditionButton" destination="IbV-d4-oDr" id="rUD-PO-nNq"/>
-                        <outlet property="skipButton" destination="kKe-EX-dbk" id="Npf-pj-rFC"/>
                         <segue destination="V4N-2t-b06" kind="presentation" identifier="MoveToUserInfo" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="DxJ-38-WEb"/>
                     </connections>
                 </viewController>
@@ -568,7 +570,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Gnq-KX-dAK"/>
+        <segue reference="DxJ-38-WEb"/>
         <segue reference="5PV-rL-Srq"/>
     </inferredMetricsTieBreakers>
     <resources>

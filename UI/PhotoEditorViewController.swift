@@ -10,8 +10,8 @@ import UIKit
 
 class PhotoEditorViewController: UIViewController {
     
-    
-    @IBOutlet weak var goNext: UIButton!
+    @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var photoAdditionButton: UIButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
@@ -20,8 +20,17 @@ class PhotoEditorViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        photoAdditionButton.layer.cornerRadius = 20
+    }
+    
     @IBAction func movePreviousScreen(_ sender: Any) {
         performSegue(withIdentifier: "MoveToUserInfo", sender: self)
+    }
+    
+    @IBAction func addUserPhoto(_ sender: Any) {
+        
     }
     
 

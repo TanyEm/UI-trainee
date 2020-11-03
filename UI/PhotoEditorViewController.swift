@@ -8,10 +8,12 @@
 
 import UIKit
 
-class PhotoEditorViewController: UIViewController {
+class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @IBOutlet weak var usersPhotoImage: UIImageView!
     @IBOutlet weak var photoAdditionButton: UIButton!
+    
+    var imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +32,22 @@ class PhotoEditorViewController: UIViewController {
     
     @IBAction func addUserPhoto(_ sender: Any) {
         
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Please, choose what kind of type of selecting photo do you prefer", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (UIAlertAction) in
+            
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (UIAlertAction) in
+            
+        }))
+
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction) in
+            
+        }))
+
+        self.present(actionSheet, animated: true, completion: nil)
     }
-    
 
     /*
     // MARK: - Navigation

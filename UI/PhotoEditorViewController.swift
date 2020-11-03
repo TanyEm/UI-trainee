@@ -12,8 +12,6 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var usersPhotoImage: UIImageView!
     @IBOutlet weak var photoAdditionButton: UIButton!
-    
-    var imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +30,19 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func addUserPhoto(_ sender: Any) {
         
+        var imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        
         let actionSheet = UIAlertController(title: "Photo Source", message: "Please, choose what kind of type of selecting photo do you prefer", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (UIAlertAction) in
-            
+            imagePicker.sourceType = .photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (UIAlertAction) in
-            
+            imagePicker.sourceType = .camera
+            self.present(imagePicker, animated: true, completion: nil)
         }))
 
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction) in
@@ -47,6 +50,17 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         }))
 
         self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        usersPhotoImage.image = image
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 
     /*

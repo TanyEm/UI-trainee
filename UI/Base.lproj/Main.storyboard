@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KMf-mJ-d4s">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -506,7 +506,7 @@
                                     <action selector="movePreviousScreen:" destination="KMf-mJ-d4s" eventType="touchUpInside" id="9qP-gi-abH"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="NnI-Zo-OGg">
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="NnI-Zo-OGg">
                                 <rect key="frame" x="107" y="348" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="lFz-kF-wum"/>

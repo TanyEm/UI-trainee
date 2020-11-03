@@ -22,6 +22,10 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         photoAdditionButton.layer.cornerRadius = 20
+        
+        usersPhotoImage.layer.cornerRadius = self.usersPhotoImage.frame.width/2
+        usersPhotoImage.layer.masksToBounds = true
+
     }
     
     @IBAction func movePreviousScreen(_ sender: Any) {
@@ -71,9 +75,19 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+
+        // Scale size of image view frame by the scale of main UIScreen because in
+        // resizedImage(at: image, for: size) size is a measure of point size,
+        // rather than pixel size
+        let scaleFactor = UIScreen.main.scale
+        let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
+        let size = self.usersPhotoImage.bounds.size.applying(scale)
         
-        usersPhotoImage.image = image
+        // get an image from UIImagePickerController and resize
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        let resizeldImage = UIKit.resizingImage(at: image, for: size)
+        
+        usersPhotoImage.image = resizeldImage
         picker.dismiss(animated: true, completion: nil)
     }
     

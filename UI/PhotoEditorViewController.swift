@@ -29,23 +29,41 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func addUserPhoto(_ sender: Any) {
-        
-        var imagePicker = UIImagePickerController()
+        let messageAlert = MessageAlert()
+        let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
-        let actionSheet = UIAlertController(title: "Photo Source", message: "Please, choose what kind of type of selecting photo do you prefer", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Photo Source",
+                                            message: "Please, choose what kind of type of selecting photo do you prefer",
+                                            preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (UIAlertAction) in
-            imagePicker.sourceType = .photoLibrary
-            self.present(imagePicker, animated: true, completion: nil)
+        actionSheet.addAction(UIAlertAction(title: "Photo Library",
+                                            style: .default,
+                                            handler: { (UIAlertAction) in
+            
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+                imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker, animated: true, completion: nil)
+            } else {
+                messageAlert.showMessage(on: self, with: "Ooops!", message: "Please, give an access to your photo library")
+            }
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (UIAlertAction) in
-            imagePicker.sourceType = .camera
-            self.present(imagePicker, animated: true, completion: nil)
+        actionSheet.addAction(UIAlertAction(title: "Camera",
+                                            style: .default,
+                                            handler: { (UIAlertAction) in
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                imagePicker.sourceType = .camera
+                self.present(imagePicker, animated: true, completion: nil)
+            } else {
+                messageAlert.showMessage(on: self, with: "Ooops!", message: "Please, give an access to your camera")
+            }
         }))
 
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction) in
+        actionSheet.addAction(UIAlertAction(title: "Cancel",
+                                            style: .cancel,
+                                            handler: { (UIAlertAction) in
             
         }))
 
@@ -62,15 +80,5 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

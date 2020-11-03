@@ -23,9 +23,8 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         super.viewWillAppear(animated)
         photoAdditionButton.layer.cornerRadius = 20
         
-        usersPhotoImage.layer.cornerRadius = self.usersPhotoImage.frame.width/2
+        usersPhotoImage.layer.cornerRadius = self.usersPhotoImage.frame.width/2.3
         usersPhotoImage.layer.masksToBounds = true
-
     }
     
     @IBAction func movePreviousScreen(_ sender: Any) {
@@ -87,7 +86,13 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         let resizeldImage = UIKit.resizingImage(at: image, for: size)
         
-        usersPhotoImage.image = resizeldImage
+        DispatchQueue.main.async {
+            UIView.transition(with: self.usersPhotoImage, duration: 1.0, options: [.curveEaseOut, .transitionCrossDissolve], animations: {
+                self.usersPhotoImage.image = resizeldImage
+            }, completion: { _ in
+            })
+        }
+        
         picker.dismiss(animated: true, completion: nil)
     }
     

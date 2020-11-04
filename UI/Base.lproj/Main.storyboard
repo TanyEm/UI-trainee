@@ -495,7 +495,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgR-0B-ZSL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbV-d4-oDr">
+                                <rect key="frame" x="20" y="782" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.6588235294" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TSc-A4-Ebw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Bold" family="SF Compact Rounded" pointSize="22"/>
+                                <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addUserPhoto:" destination="KMf-mJ-d4s" eventType="touchUpInside" id="rZD-Sh-SzQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgR-0B-ZSL">
                                 <rect key="frame" x="10" y="54" width="47" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="1qC-tE-tDB"/>
@@ -519,18 +531,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbV-d4-oDr">
-                                <rect key="frame" x="20" y="782" width="374" height="50"/>
-                                <color key="backgroundColor" red="0.16078431369999999" green="0.6588235294" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="TSc-A4-Ebw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFCompactRounded-Bold" family="SF Compact Rounded" pointSize="22"/>
-                                <state key="normal" title="Add Photo"/>
-                                <connections>
-                                    <action selector="addUserPhoto:" destination="KMf-mJ-d4s" eventType="touchUpInside" id="rZD-Sh-SzQ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKe-EX-dbk">
                                 <rect key="frame" x="158" y="741" width="98" height="33"/>
                                 <fontDescription key="fontDescription" name="SFCompactRounded-Bold" family="SF Compact Rounded" pointSize="17"/>

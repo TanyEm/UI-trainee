@@ -12,6 +12,20 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var usersPhotoImage: UIImageView!
     @IBOutlet weak var photoAdditionButton: UIButton!
+        
+    //Lets create a struct to have the basic information we need
+    struct Item {
+        var id: Int
+        var name: String
+        var x: Double
+        var y: Double
+    }
+    
+    //Creating some sample button on the map
+    //x and y are based on the original Image size
+    let buttonsInfo: Item =
+        Item(id: 1, name: "Edit", x: 70, y: 150)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +39,8 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         
         usersPhotoImage.layer.cornerRadius = self.usersPhotoImage.frame.width/2.3
         usersPhotoImage.layer.masksToBounds = true
+                        
+        addEditButton()
     }
     
     @IBAction func movePreviousScreen(_ sender: Any) {
@@ -75,13 +91,8 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
-        // Scale size of image view frame by the scale of main UIScreen because in
-        // resizedImage(at: image, for: size) size is a measure of point size,
-        // rather than pixel size
-        let scaleFactor = UIScreen.main.scale
-        let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
-        let size = self.usersPhotoImage.bounds.size.applying(scale)
-        
+        let size = scaleSizeOfImage()
+                
         // get an image from UIImagePickerController and resize
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         let resizeldImage = UIKit.resizingImage(at: image, for: size)
@@ -99,5 +110,40 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+    
+    func scaleSizeOfImage() -> CGSize {
+        // Scale size of image view frame by the scale of main UIScreen because in
+        // resizedImage(at: image, for: size) size is a measure of point size,
+        // rather than pixel size
+        let scaleFactor = UIScreen.main.scale
+        let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
+        let size = self.usersPhotoImage.bounds.size.applying(scale)
 
+        return size
+    }
+    
+    func addEditButton() {
+        let originalImageSize: CGSize = scaleSizeOfImage()
+
+        //after the image is rendered on UI get the real dimensions
+        //Size of the Image that is rendered on UI in proper aspect ratio
+        let renderedImageSize: CGSize = CGSize(width: 400, height: 400)
+
+        let button = UIButton()
+        button.tag = buttonsInfo.id
+        button.frame = CGRect(x:Double(renderedImageSize.width/originalImageSize.width)*buttonsInfo.x,
+                               y: Double(renderedImageSize.height/originalImageSize.height)*buttonsInfo.y,
+                              width: 70,
+                              height: 30)
+        button.backgroundColor = UIColor.lightGray
+        button.setTitle("Edit", for: .normal)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+
+        usersPhotoImage.addSubview(button)
+    }
+    
+    
+    @objc func buttonAction(sender: UIButton!) {
+            print("Button tapped")
+        }
 }

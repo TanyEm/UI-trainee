@@ -36,6 +36,7 @@
 		73A33E64254B6847001D9168 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E63254B6847001D9168 /* PhotoEditorViewController.swift */; };
 		73A33E6C254C3404001D9168 /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E6B254C3404001D9168 /* MessageAlert.swift */; };
 		73A33E732551D2DE001D9168 /* ImageResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A33E722551D2DE001D9168 /* ImageResizer.swift */; };
+		73A562402552EE0800D3B8CF /* ButtonAdding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5623F2552EE0800D3B8CF /* ButtonAdding.swift */; };
 		73D5727424C858CA0056BA76 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D5727324C858CA0056BA76 /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		73A33E63254B6847001D9168 /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
 		73A33E6B254C3404001D9168 /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
 		73A33E722551D2DE001D9168 /* ImageResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizer.swift; sourceTree = "<group>"; };
+		73A5623F2552EE0800D3B8CF /* ButtonAdding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAdding.swift; sourceTree = "<group>"; };
 		73D5727324C858CA0056BA76 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		D12056727A44BD57D1F67A82 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 				73A33E5E254A01B0001D9168 /* GesturesHendler.swift */,
 				73A33E6B254C3404001D9168 /* MessageAlert.swift */,
 				73A33E722551D2DE001D9168 /* ImageResizer.swift */,
+				73A5623F2552EE0800D3B8CF /* ButtonAdding.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				7397AC8624AC93B8007AE5E7 /* AppDelegate.swift in Sources */,
 				7397ACCF24B8AD25007AE5E7 /* PinCodeViewController.swift in Sources */,
 				7397AC8824AC93B8007AE5E7 /* SceneDelegate.swift in Sources */,
+				73A562402552EE0800D3B8CF /* ButtonAdding.swift in Sources */,
 				73A33E732551D2DE001D9168 /* ImageResizer.swift in Sources */,
 				7330516C2548187F00AB3510 /* TextFieldArrowOnTheRightSide.swift in Sources */,
 			);

@@ -12,8 +12,6 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var usersPhotoImage: UIImageView!
     @IBOutlet weak var photoAdditionButton: UIButton!
-        
-    let editButton = ButtonAdding()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +27,19 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         usersPhotoImage.layer.masksToBounds = true
         
         // Add button on top of image
-        let size = scaleSizeOfImage()
-        editButton.addEditButton(size: size, imageView: usersPhotoImage)
+        let button = ButtonAdding.makeButton(size: scaleSizeOfImage(),
+                                             title: "Edit",
+                                             x: 70,
+                                             y: 150,
+                                             width: 70,
+                                             height: 30)
+        self.usersPhotoImage.addSubview(button)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
+    
+    @objc func buttonAction(sender: UIButton!) {
+            print("Button tapped")
+        }
     
     @IBAction func movePreviousScreen(_ sender: Any) {
         performSegue(withIdentifier: "MoveToUserInfo", sender: self)

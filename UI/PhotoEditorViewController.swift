@@ -33,8 +33,8 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
                                              y: 150,
                                              width: 70,
                                              height: 30)
-        self.usersPhotoImage.addSubview(button)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        self.usersPhotoImage.addSubview(button)
     }
     
     @objc func buttonAction(sender: UIButton!) {

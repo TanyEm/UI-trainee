@@ -1,6 +1,6 @@
 import UIKit
 
-class ButtonAdding {
+struct ButtonAdding {
     
     static func makeButton(size: CGSize, title: String, x: Double, y: Double, width: Double, height: Double) -> UIButton {
         let originalImageSize: CGSize = size

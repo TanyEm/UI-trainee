@@ -25,7 +25,6 @@ class ButtonMover {
             let height = frame.cgRectValue.height
             UIView.animate(withDuration: 0.5) {
                 self.constraint?.constant = height + 10
-                self.view?.layoutIfNeeded()
             }
         }
     }
@@ -34,7 +33,6 @@ class ButtonMover {
         print("keyboardWillHide_moveButtonUp")
         UIView.animate(withDuration: 0.5) {
             self.constraint?.constant = 30
-            self.view?.layoutIfNeeded()
         }
     }
 }

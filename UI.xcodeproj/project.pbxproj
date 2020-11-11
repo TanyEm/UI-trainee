@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C1DF1A42D8D7C949130BB14 /* libPods-UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 084808B33DF47F81B6596CE9 /* libPods-UITests.a */; };
 		60FF22F264CCF947BFEB2F0E /* libPods-UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC903D6CC939A66C20D75D /* libPods-UI.a */; };
+		7318902D255E8E5B00D251F9 /* ActionSheetPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7318902C255E8E5B00D251F9 /* ActionSheetPicker.swift */; };
 		7330516C2548187F00AB3510 /* TextFieldArrowOnTheRightSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7330516B2548187F00AB3510 /* TextFieldArrowOnTheRightSide.swift */; };
 		7330517425483EAB00AB3510 /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7330517325483EAB00AB3510 /* ButtonWithImage.swift */; };
 		7397AC8624AC93B8007AE5E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397AC8524AC93B8007AE5E7 /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 		084808B33DF47F81B6596CE9 /* libPods-UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DC903D6CC939A66C20D75D /* libPods-UI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56BDD0244E815376A5EB1DDF /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7318902C255E8E5B00D251F9 /* ActionSheetPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetPicker.swift; sourceTree = "<group>"; };
 		7330516B2548187F00AB3510 /* TextFieldArrowOnTheRightSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldArrowOnTheRightSide.swift; sourceTree = "<group>"; };
 		7330517325483EAB00AB3510 /* ButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImage.swift; sourceTree = "<group>"; };
 		7397AC8224AC93B8007AE5E7 /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 				73A33E6B254C3404001D9168 /* MessageAlert.swift */,
 				73A33E722551D2DE001D9168 /* ImageResizer.swift */,
 				73A5623F2552EE0800D3B8CF /* ButtonAdding.swift */,
+				7318902C255E8E5B00D251F9 /* ActionSheetPicker.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				73A33E5F254A01B0001D9168 /* GesturesHendler.swift in Sources */,
 				7397AC8A24AC93B8007AE5E7 /* WelcomeViewController.swift in Sources */,
 				73A33E5A2549B217001D9168 /* ButtonMover.swift in Sources */,
+				7318902D255E8E5B00D251F9 /* ActionSheetPicker.swift in Sources */,
 				73A33E6C254C3404001D9168 /* MessageAlert.swift in Sources */,
 				7397AC8624AC93B8007AE5E7 /* AppDelegate.swift in Sources */,
 				7397ACCF24B8AD25007AE5E7 /* PinCodeViewController.swift in Sources */,

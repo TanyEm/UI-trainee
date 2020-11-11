@@ -541,10 +541,26 @@
                                     <action selector="movePreviousScreen:" destination="KMf-mJ-d4s" eventType="touchUpInside" id="69F-YZ-eb1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXy-ac-qB8">
+                                <rect key="frame" x="167" y="491" width="80" height="40"/>
+                                <color key="backgroundColor" red="0.4100838337692746" green="0.4141440697471882" blue="0.4141440697471882" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Ci9-YO-M9Q"/>
+                                    <constraint firstAttribute="height" constant="40" id="Qs8-Dp-B89"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Bold" family="SF Compact Rounded" pointSize="20"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addUserPhoto:" destination="KMf-mJ-d4s" eventType="touchUpInside" id="oFM-N6-Ptd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s7l-EH-5Wk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bXy-ac-qB8" firstAttribute="centerX" secondItem="0Xx-hx-JmB" secondAttribute="centerX" id="1sm-rm-E3a"/>
                             <constraint firstItem="NnI-Zo-OGg" firstAttribute="centerX" secondItem="0Xx-hx-JmB" secondAttribute="centerX" id="6Ww-hG-GIy"/>
                             <constraint firstItem="s7l-EH-5Wk" firstAttribute="bottom" secondItem="IbV-d4-oDr" secondAttribute="bottom" constant="30" id="G3l-1w-lOE"/>
                             <constraint firstItem="IbV-d4-oDr" firstAttribute="top" secondItem="kKe-EX-dbk" secondAttribute="bottom" constant="8" id="IXp-2a-sgf"/>
@@ -561,6 +577,7 @@
                     </view>
                     <connections>
                         <outlet property="photoAdditionButton" destination="IbV-d4-oDr" id="rUD-PO-nNq"/>
+                        <outlet property="photoEditButton" destination="bXy-ac-qB8" id="QgP-P8-5Rs"/>
                         <outlet property="usersPhotoImage" destination="NnI-Zo-OGg" id="kT7-B7-sMa"/>
                         <segue destination="V4N-2t-b06" kind="presentation" identifier="MoveToUserInfo" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="DxJ-38-WEb"/>
                     </connections>

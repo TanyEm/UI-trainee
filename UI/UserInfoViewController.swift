@@ -23,7 +23,7 @@ class UserInfoViewController: UIViewController {
         
         buttonMover = ButtonMover(view: self.view, constraint: self.bottomConstraint)
         guard let mover = buttonMover else {return}
-                
+
         NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         

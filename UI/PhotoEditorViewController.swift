@@ -12,6 +12,7 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var usersPhotoImage: UIImageView!
     @IBOutlet weak var photoAdditionButton: UIButton!
+    @IBOutlet weak var photoEditButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,18 +24,21 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         super.viewWillAppear(animated)
         photoAdditionButton.layer.cornerRadius = 20
         
+        photoEditButton.layer.cornerRadius = 15
+        photoEditButton.isHidden = true
+        
         usersPhotoImage.layer.cornerRadius = self.usersPhotoImage.frame.width/2.3
         usersPhotoImage.layer.masksToBounds = true
         
         // Add button on top of image
-        let button = ButtonAdding.makeButton(size: scaleSizeOfImage(),
-                                             title: "Edit",
-                                             x: 70,
-                                             y: 150,
-                                             width: 70,
-                                             height: 30)
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        self.usersPhotoImage.addSubview(button)
+//        let button = ButtonAdding.makeButton(size: scaleSizeOfImage(),
+//                                             title: "Edit",
+//                                             x: 70,
+//                                             y: 150,
+//                                             width: 70,
+//                                             height: 30)
+//        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+//        self.usersPhotoImage.addSubview(button)
     }
     
     @objc func buttonAction(sender: UIButton!) {
@@ -46,6 +50,10 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func addUserPhoto(_ sender: Any) {
+        actionSheetPicker()
+    }
+    
+    func actionSheetPicker() {
         let messageAlert = MessageAlert()
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -96,8 +104,10 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         let resizeldImage = UIKit.resizingImage(at: image, for: size)
         
         DispatchQueue.main.async {
-            UIView.transition(with: self.usersPhotoImage, duration: 1.0, options: [.curveEaseOut, .transitionCrossDissolve], animations: {
-                self.usersPhotoImage.image = resizeldImage
+            UIView.transition(with: self.usersPhotoImage, duration: 1.0, options: [.curveEaseOut, .transitionCrossDissolve], animations: { [self] in
+                usersPhotoImage.image = resizeldImage
+                photoEditButton.isHidden = false
+                photoAdditionButton.setTitle("Done", for: .normal)
             }, completion: { _ in
             })
         }

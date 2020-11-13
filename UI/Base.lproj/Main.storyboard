@@ -541,8 +541,8 @@
                                     <action selector="movePreviousScreen:" destination="KMf-mJ-d4s" eventType="touchUpInside" id="69F-YZ-eb1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXy-ac-qB8">
-                                <rect key="frame" x="167" y="491" width="80" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXy-ac-qB8">
+                                <rect key="frame" x="167" y="488" width="80" height="40"/>
                                 <color key="backgroundColor" red="0.4100838337692746" green="0.4141440697471882" blue="0.4141440697471882" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Ci9-YO-M9Q"/>
@@ -567,6 +567,7 @@
                             <constraint firstItem="s7l-EH-5Wk" firstAttribute="trailing" secondItem="IbV-d4-oDr" secondAttribute="trailing" constant="20" id="Iyf-aC-tP9"/>
                             <constraint firstItem="l51-9v-lHT" firstAttribute="leading" secondItem="s7l-EH-5Wk" secondAttribute="leading" constant="20" id="PeR-KD-EeZ"/>
                             <constraint firstItem="s7l-EH-5Wk" firstAttribute="trailing" secondItem="l51-9v-lHT" secondAttribute="trailing" constant="20" id="SdT-X1-RG6"/>
+                            <constraint firstItem="bXy-ac-qB8" firstAttribute="bottom" secondItem="NnI-Zo-OGg" secondAttribute="bottom" constant="-20" id="TyG-7u-9Dr"/>
                             <constraint firstItem="l51-9v-lHT" firstAttribute="top" secondItem="KgR-0B-ZSL" secondAttribute="bottom" constant="20" id="dhs-iS-6ZL"/>
                             <constraint firstItem="KgR-0B-ZSL" firstAttribute="leading" secondItem="s7l-EH-5Wk" secondAttribute="leading" constant="10" id="fZm-sh-QRT"/>
                             <constraint firstItem="kKe-EX-dbk" firstAttribute="centerX" secondItem="0Xx-hx-JmB" secondAttribute="centerX" id="kMH-Wd-PyZ"/>

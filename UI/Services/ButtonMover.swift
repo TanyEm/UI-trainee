@@ -19,11 +19,21 @@ class ButtonMover {
         self.constraint = constraint
     }
     
+    @objc func keyboardWillChangeFrame(notification: NSNotification) {
+        print("keyboardWillChangeFrame_moveButtonUp")
+        if let frame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let height = frame.cgRectValue.height
+            print("keyboard height: \(height)")
+            self.constraint?.constant = height
+            self.view?.layoutIfNeeded()
+        }
+    }
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         print("keyboardWillShow_moveButtonUp")
         if let frame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let height = frame.cgRectValue.height
-            self.constraint?.constant = height + 10
+            self.constraint?.constant = height
             self.view?.layoutIfNeeded()
         }
     }

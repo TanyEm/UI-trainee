@@ -20,8 +20,9 @@ class PhoneNumberViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gestureHendler = GesturesHendler(view: self.view)
-        gestureHendler?.gestureRecognizer()
+//        gestureHendler = GesturesHendler(view: self.view)
+//        gestureHendler?.gestureRecognizer()
+        gestureRecognizer()
         
         buttonMover = ButtonMover(view: self.view, constraint: self.bottomConstraint)
         guard let mover = buttonMover else {return}
@@ -90,6 +91,18 @@ class PhoneNumberViewController: UIViewController {
         // add image on the right side of text field
         let arrow = TextFieldArrowOnTheRightSide()
         arrow.makeArrow(field: regionNumber)
+    }
+    
+    func gestureRecognizer() {
+        // hide keyboad when user taps on view
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.delegate = self
+        tap.cancelsTouchesInView = false
+        self.view?.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view?.endEditing(true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -175,4 +188,12 @@ extension PhoneNumberViewController: UIPickerViewDataSource, UIPickerViewDelegat
         regionNumber.text = codes[row]
     }
     
+}
+
+
+extension PhoneNumberViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let isControllTapped = touch.view is UIControl
+        return !isControllTapped
+    }
 }

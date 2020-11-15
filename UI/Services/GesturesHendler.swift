@@ -10,6 +10,7 @@ import UIKit
 
 class GesturesHendler {
     var view: UIView?
+    var data = ""
     
     init(view: UIView) {
         self.view = view
@@ -25,4 +26,5 @@ class GesturesHendler {
     @objc func dismissKeyboard() {
         self.view?.endEditing(true)
     }
+
 }

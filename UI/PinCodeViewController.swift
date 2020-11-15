@@ -33,9 +33,18 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
         buttonMover = ButtonMover(view: self.view, constraint: self.bottomConstraint)
         guard let mover = buttonMover else {return}
         
-        NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
+        NotificationCenter.default.addObserver(mover,
+                                               selector: #selector(mover.keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(mover,
+                                               selector: #selector(mover.keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(mover,
+                                               selector: #selector(mover.keyboardWillChangeFrame),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
         firstCell.delegate = self
         secondCell.delegate = self
         thirdCell.delegate = self
@@ -61,12 +70,14 @@ class PinCodeViewController: UIViewController, UITextFieldDelegate{
         repeats: true)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         guard let mover = buttonMover else {return}
        
         NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
     }
     
     @IBAction func moveToPhoneNumber(_ sender: Any) {

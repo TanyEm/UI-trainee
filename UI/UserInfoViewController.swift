@@ -24,8 +24,19 @@ class UserInfoViewController: UIViewController {
         buttonMover = ButtonMover(view: self.view, constraint: self.bottomConstraint)
         guard let mover = buttonMover else {return}
 
-        NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(mover, selector: #selector(mover.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(mover,
+                                               selector: #selector(mover.keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(mover,
+                                               selector: #selector(mover.keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(mover,
+                                               selector: #selector(mover.keyboardWillChangeFrame),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
+
         
         createPicker()
     }
@@ -55,12 +66,13 @@ class UserInfoViewController: UIViewController {
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         guard let mover = buttonMover else {return}
        
         NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(mover, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     @IBAction func moveToPhoneNumberToStartAgain(_ sender: Any) {
